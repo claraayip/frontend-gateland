@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Supaya tampilan menyesuaikan ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Admin - GateLand</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS kita -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HALAMAN LOGIN
+    ========================== -->
+
+    <main class="login-page">
+
+
+        <!-- =========================
+             BAGIAN KIRI
+        ========================== -->
+
+        <section class="brand-panel">
+
+            <div class="brand-content">
+
+                <!-- Logo -->
+                <div class="logo-box">
+                    <img
+                        src="assets/logo gateland.png"
+                        alt="Logo GateLand"
+                    >
+                </div>
+
+
+                <!-- Nama aplikasi -->
+                <div class="brand-name">
+
+                    <span>GateLand</span>
+
+                    <small>
+                        Smart Living Starts Here
+                    </small>
+
+                </div>
+
+
+                <!-- Lokasi -->
+                <div class="location-badge">
+
+                    <span class="dot"></span>
+
+                    RT 04 / RW 08 Kawasan Harmoni Asri
+
+                </div>
+
+
+                <!-- Judul -->
+                <h1>
+                    Sistem Informasi Manajemen<br>
+                    Klaster Terpadu
+                </h1>
+
+
+                <!-- Deskripsi -->
+                <p class="brand-description">
+
+                    Platform operasional aman, transparan, dan realtime
+                    untuk pengawasan gerbang RFID, iuran berkala,
+                    serta pelayanan warga.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             BAGIAN KANAN
+        ========================== -->
+
+        <section class="login-panel">
+
+            <div class="login-container">
+
+
+                <!-- Badge -->
+                <div class="portal-badge">
+
+                    <span class="shield-icon">
+                        ◈
+                    </span>
+
+                    Portal Resmi Pengurus &amp; Operator
+
+                </div>
+
+
+                <!-- Judul login -->
+                <h2>
+                    Masuk ke Akun Admin
+                </h2>
+
+
+                <!-- Deskripsi login -->
+                <p class="login-description">
+
+                    Gunakan kredensial pengelola resmi Anda untuk mengelola
+                    kas, perizinan, dan gerbang klaster.
+
+                </p>
+
+
+
+                <!-- =========================
+                     FORM LOGIN
+                ========================== -->
+
+                <form id="loginForm" action="dashboard.html" method="GET">
+
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Pengelola / Admin
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <!-- Icon email -->
+                            <span class="input-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+
+                                    <rect
+                                        x="3"
+                                        y="5"
+                                        width="18"
+                                        height="14"
+                                        rx="2"
+                                    ></rect>
+
+                                    <path d="m3 7 9 6 9-6"></path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <!-- Input email -->
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="admin.harmoni@gateland.id"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group password-group">
+
+                        <label for="password">
+                            Kata Sandi
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <!-- Icon lock -->
+                            <span class="input-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+
+                                    <rect
+                                        x="5"
+                                        y="10"
+                                        width="14"
+                                        height="10"
+                                        rx="2"
+                                    ></rect>
+
+                                    <path
+                                        d="M8 10V7a4 4 0 0 1 8 0v3"
+                                    ></path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <!-- Input password -->
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="••••••••••••"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <!-- Tombol lihat password -->
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                                aria-label="Tampilkan kata sandi"
+                            >
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+
+                                    <path
+                                        d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"
+                                    ></path>
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="2.5"
+                                    ></circle>
+
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BUTTON LOGIN -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <span>
+                            Masuk ke Dashboard Admin
+                        </span>
+
+
+                        <!-- Arrow -->
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path d="M5 12h13"></path>
+
+                            <path d="m13 6 6 6-6 6"></path>
+
+                        </svg>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // Mengambil tombol mata
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        // Mengambil input password
+        const password =
+            document.getElementById("password");
+
+
+        // Ketika tombol mata diklik
+        togglePassword.addEventListener("click", () => {
+
+            // Mengecek apakah password sedang disembunyikan
+            const isPassword =
+                password.type === "password";
+
+
+            // Kalau disembunyikan → tampilkan
+            // Kalau ditampilkan → sembunyikan
+            password.type =
+                isPassword ? "text" : "password";
+
+
+            // Mengubah label tombol
+            togglePassword.setAttribute(
+                "aria-label",
+                isPassword
+                    ? "Sembunyikan kata sandi"
+                    : "Tampilkan kata sandi"
+            );
+
+        });
+
+
+
+        // Form login
+        document
+            .getElementById("loginForm")
+            .addEventListener("submit", (event) => {
+
+                // Jangan reload halaman
+                event.preventDefault();
+
+                // Berpindah langsung ke halaman dashboard.html
+                window.location.href = "dashboard.html";
+
+            });
+
+    </script>
+
+</body>
+</html>

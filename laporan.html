@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Keuangan & Alokasi Kas - GateLand</title>
+  
+  <!-- CSS Utama & CSS Halaman Laporan -->
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="laporan.css">
+  
+  <!-- FontAwesome & Font Google Inter -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- SIDEBAR NAVIGASI -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">
+          <i class="fa-solid fa-building-user logo-icon"></i>
+          <span class="brand-name">GateLand</span>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-title">NAVIGASI UTAMA</span>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="dashboard.html">
+              <i class="fa-solid fa-border-all"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="penghuni.html">
+              <i class="fa-solid fa-users"></i>
+              <span>Penghuni</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="iuran.html">
+              <i class="fa-solid fa-wallet"></i>
+              <span>Iuran</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="laporan.html">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Laporan</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <i class="fa-solid fa-gear"></i>
+              <span>Pengaturan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- User Profile Sidebar Bottom -->
+      <div class="user-sidebar-card">
+        <div class="user-avatar-circle">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Bpk. Bambang P.</span>
+          <span class="user-role">Ketua RT 04 / RW 08</span>
+          <div class="user-status">
+            <span class="status-dot"></span> Online
+          </div>
+        </div>
+        <a href="index.html" class="btn-logout" title="Keluar">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR / HEADER -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Cari data warga, unit kavling, bukti iuran, laporan...">
+        </div>
+
+        <div class="topbar-actions">
+          <a href="buatpengumuman.html" class="btn-announcement">
+            <i class="fa-solid fa-bullhorn"></i> + Buat Pengumuman
+          </a>
+
+          <div class="admin-badge">
+            <span class="admin-text">Admin Aktif</span>
+            <span class="location-text">GateLand RT 04 / RW 08</span>
+            <i class="fa-solid fa-circle-user admin-avatar"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- HEADER PENELUSURAN & JUDUL HALAMAN -->
+      <div class="page-header-container">
+        <div class="page-title-group">
+          <div class="badge-header-group">
+            <span class="pill-badge-gray">Klaster Gardenia & Boulevard</span>
+            <i class="fa-solid fa-chevron-right breadcrumb-arrow"></i>
+            <span class="pill-badge-gray">Pembukuan & Finansial Kas</span>
+            <i class="fa-solid fa-chevron-right breadcrumb-arrow"></i>
+            <span class="pill-badge-purple">Laporan & Rekapitulasi Kas RT 04 / RW 08</span>
+          </div>
+          <h1 class="page-h1-title">
+            Laporan Keuangan & Alokasi Kas
+            <span class="pill-active-date">Periode Aktif: September 2026</span>
+          </h1>
+          <p class="page-subtitle">
+            Transparansi rekapitulasi iuran warga, realisasi beban operasional, dan saldo cadangan kas terdaftar secara teratur dan akurat.
+          </p>
+        </div>
+
+        <div class="page-actions-group">
+          <div class="select-dropdown-box">
+            <span>September 2026</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+
+          <button class="btn-outline-action">
+            <i class="fa-solid fa-file-export"></i> Ekspor Laporan <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <button class="btn-navy-action" id="openModalCatatAlokasi">
+            <i class="fa-solid fa-plus"></i> + Catat Alokasi & Kas Keluar
+          </button>
+        </div>
+      </div>
+
+      <!-- TOP STAT CARDS ROW -->
+      <section class="stat-cards-grid">
+        
+        <!-- Card 1: Kas Masuk -->
+        <div class="stat-card">
+          <div class="stat-header">
+            <div>
+              <span class="stat-label">KAS MASUK (BULAN INI)</span>
+              <h2 class="stat-value">Rp 42.850.000</h2>
+            </div>
+            <div class="stat-icon-box success-light-bg">
+              <i class="fa-solid fa-arrow-trend-up text-success"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Alokasi & Beban -->
+        <div class="stat-card">
+          <div class="stat-header">
+            <div>
+              <span class="stat-label">ALOKASI & BEBAN KAS</span>
+              <h2 class="stat-value">Rp 31.420.000</h2>
+            </div>
+            <div class="stat-icon-box rose-bg">
+              <i class="fa-solid fa-receipt text-rose"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Total Kas Tersimpan (Navy Dark Card) -->
+        <div class="stat-card navy-card">
+          <div class="stat-header">
+            <div>
+              <span class="stat-label-light">TOTAL KAS TERSIMPAN</span>
+              <h2 class="stat-value-light">Rp 148.650.000</h2>
+            </div>
+            <div class="stat-icon-box navy-icon-bg">
+              <i class="fa-solid fa-vault"></i>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- MIDDLE SECTION 1: GRAFIK & DISTRIBUSI BEBAN -->
+      <section class="middle-report-grid">
+        
+        <!-- LEFT: GRAFIK KAS BULANAN -->
+        <div class="card-box chart-card">
+          <div class="card-header-flex">
+            <div>
+              <h3 class="card-title">Grafik Kas Bulanan (Apr – Sep 2026)</h3>
+              <p class="card-desc">Perbandingan kas masuk versus alokasi kas keluar operasional</p>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot navy-dot"></span> Kas Masuk</span>
+              <span class="legend-item"><span class="legend-dot rose-dot"></span> Kas Keluar</span>
+            </div>
+          </div>
+
+          <!-- VISUAL BAR CHART -->
+          <div class="chart-visual-container">
+            <div class="chart-bars-group">
+              
+              <div class="bar-col">
+                <div class="bars-pair">
+                  <div class="bar navy-bar" style="height: 60%;"></div>
+                  <div class="bar rose-bar" style="height: 40%;"></div>
+                </div>
+                <span class="bar-label">Apr</span>
+              </div>
+
+              <div class="bar-col">
+                <div class="bars-pair">
+                  <div class="bar navy-bar" style="height: 65%;"></div>
+                  <div class="bar rose-bar" style="height: 45%;"></div>
+                </div>
+                <span class="bar-label">Mei</span>
+              </div>
+
+              <div class="bar-col">
+                <div class="bars-pair">
+                  <div class="bar navy-bar" style="height: 70%;"></div>
+                  <div class="bar rose-bar" style="height: 50%;"></div>
+                </div>
+                <span class="bar-label">Jun</span>
+              </div>
+
+              <div class="bar-col">
+                <div class="bars-pair">
+                  <div class="bar navy-bar" style="height: 75%;"></div>
+                  <div class="bar rose-bar" style="height: 52%;"></div>
+                </div>
+                <span class="bar-label">Jul</span>
+              </div>
+
+              <div class="bar-col">
+                <div class="bars-pair">
+                  <div class="bar navy-bar" style="height: 80%;"></div>
+                  <div class="bar rose-bar" style="height: 55%;"></div>
+                </div>
+                <span class="bar-label">Ags</span>
+              </div>
+
+              <div class="bar-col">
+                <div class="bars-pair">
+                  <div class="bar navy-bar" style="height: 95%;"></div>
+                  <div class="bar rose-bar" style="height: 65%;"></div>
+                </div>
+                <span class="bar-label active">Sep '26</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- INSIGHT BANNER FOOTER -->
+          <div class="insight-banner">
+            <i class="fa-solid fa-chart-line insight-icon"></i>
+            <p>
+              <strong>Insight Pembukuan:</strong> Surplus kas bulan ini meningkat sebesar +12.4% dibanding bulan lalu. Alokasi pengeluaran terbesar berfokus pada perbaikan sarana dan persiapan kas duka/sosial paguyuban.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT: DISTRIBUSI BEBAN & ALOKASI -->
+        <div class="card-box distribution-card">
+          <div class="card-header-flex">
+            <div>
+              <h3 class="card-title">Distribusi Beban & Alokasi</h3>
+              <p class="card-desc">Penggunaan kas operasional bulan ini: <strong>Rp 31.420.000</strong></p>
+            </div>
+            <span class="badge-anggaran">89.7% Anggaran</span>
+          </div>
+
+          <div class="beban-list">
+            
+            <div class="beban-item">
+              <div class="beban-icon-box">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="beban-content">
+                <div class="beban-title-row">
+                  <strong class="beban-name">Keamanan & Pos Satpam 24 Jam</strong>
+                  <span class="beban-amount">Rp 15.000.000</span>
+                </div>
+                <div class="progress-bar-bg margin-v-6">
+                  <div class="progress-bar-fill primary-fill" style="width: 47.7%;"></div>
+                </div>
+                <div class="beban-sub-info">
+                  <span>Honor 4 Personil + Servis Barrier Gate RFID</span>
+                  <span class="font-bold">47.7%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="beban-item">
+              <div class="beban-icon-box">
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+              <div class="beban-content">
+                <div class="beban-title-row">
+                  <strong class="beban-name">Kebersihan & Angkut Sampah DLH</strong>
+                  <span class="beban-amount">Rp 7.500.000</span>
+                </div>
+                <div class="progress-bar-bg margin-v-6">
+                  <div class="progress-bar-fill secondary-fill" style="width: 23.9%;"></div>
+                </div>
+                <div class="beban-sub-info">
+                  <span>Retribusi armada mekar sampah 3x seminggu</span>
+                  <span class="font-bold">23.9%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="beban-item">
+              <div class="beban-icon-box">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div class="beban-content">
+                <div class="beban-title-row">
+                  <strong class="beban-name">Kas Sosial & Rapat Warga</strong>
+                  <span class="beban-amount">Rp 3.790.000</span>
+                </div>
+                <div class="progress-bar-bg margin-v-6">
+                  <div class="progress-bar-fill rose-fill" style="width: 12.1%;"></div>
+                </div>
+                <div class="beban-sub-info">
+                  <span>Santunan Duka/Sakit & konsumsi rapat/RT</span>
+                  <span class="font-bold">12.1%</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- MIDDLE SECTION 2: REKAPITULASI TARGET VS REALISASI -->
+      <section class="card-box section-margin-top">
+        <div class="card-header-flex">
+          <div>
+            <h3 class="card-title">Rekapitulasi Target vs Realisasi Per Pos Iuran</h3>
+            <p class="card-desc">Evaluasi pencapaian tingkat kepatuhan kas iuran per nominal total 72 Kepala Keluarga</p>
+          </div>
+          <span class="tag-verified-bendahara">
+            <i class="fa-solid fa-circle-check"></i> Terverifikasi Bendahara: <strong>94.6% (68/72 KK)</strong>
+          </span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Nama Pos Iuran</th>
+                <th>Sasaran KK</th>
+                <th>Target Nominal</th>
+                <th>Total Terkumpul</th>
+                <th>Tingkat Capaian</th>
+                <th>Sisa Tunggakan</th>
+                <th>Status Pos</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>
+                  <div class="pos-title-cell">
+                    <span class="dot-pos dot-green"></span>
+                    <strong>Kebersihan & Sampah Lingkungan</strong>
+                  </div>
+                </td>
+                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
+                <td>Rp 3.600.000</td>
+                <td><strong>Rp 3.600.000</strong></td>
+                <td>
+                  <div class="capaian-cell">
+                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill success" style="width: 100%;"></div></div>
+                    <span>100% (72 KK)</span>
+                  </div>
+                </td>
+                <td><strong class="text-green">Rp 0</strong></td>
+                <td><span class="badge-status-pill green">Lunas Terkumpul</span></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="pos-title-cell">
+                    <span class="dot-pos dot-navy"></span>
+                    <strong>Keamanan, Sekuriti & Barrier RFID</strong>
+                  </div>
+                </td>
+                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
+                <td>Rp 15.000.000</td>
+                <td><strong>Rp 14.400.000</strong></td>
+                <td>
+                  <div class="capaian-cell">
+                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill primary-fill" style="width: 96%;"></div></div>
+                    <span>96% (69 KK)</span>
+                  </div>
+                </td>
+                <td><strong class="text-danger">Rp 600.000 <small>(3 KK)</small></strong></td>
+                <td><span class="badge-status-pill blue">Beda Tipis</span></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="pos-title-cell">
+                    <span class="dot-pos dot-purple"></span>
+                    <strong>Kas Paguyuban & Kesejahteraan Sosial</strong>
+                  </div>
+                </td>
+                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
+                <td>Rp 3.750.000</td>
+                <td><strong>Rp 3.550.000</strong></td>
+                <td>
+                  <div class="capaian-cell">
+                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill secondary-fill" style="width: 94.6%;"></div></div>
+                    <span>94.6% (68 KK)</span>
+                  </div>
+                </td>
+                <td><strong class="text-danger">Rp 200.000 <small>(4 KK)</small></strong></td>
+                <td><span class="badge-status-pill purple">94.6% Lunas</span></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="pos-title-cell">
+                    <span class="dot-pos dot-rose"></span>
+                    <strong>Iuran Insidental Perbaikan Paving Lapangan</strong>
+                  </div>
+                </td>
+                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
+                <td>Rp 3.600.000</td>
+                <td><strong>Rp 3.000.000</strong></td>
+                <td>
+                  <div class="capaian-cell">
+                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill rose-fill" style="width: 83%;"></div></div>
+                    <span>83% (60 KK)</span>
+                  </div>
+                </td>
+                <td><strong class="text-danger">Rp 600.000 <small>(12 KK)</small></strong></td>
+                <td><span class="badge-status-pill orange">Dalam Realisasi</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- BOTTOM SECTION: LOG TRANSAKSI KAS & MUTASI TERKINI -->
+      <section class="card-box section-margin-top">
+        <div class="card-header-flex">
+          <div>
+            <h3 class="card-title">Log Transaksi Kas & Mutasi Terkini</h3>
+            <p class="card-desc">Arus pencatatan kas masuk dan keluar secara rinci beserta bukti fisik operasional</p>
+          </div>
+
+          <div class="tab-buttons">
+            <button class="tab-btn active">Semua Mutasi</button>
+            <button class="tab-btn">Uang Masuk / Iuran</button>
+            <button class="tab-btn">Uang Keluar / Beban</button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="report-table log-table">
+            <thead>
+              <tr>
+                <th>Tanggal Transaksi</th>
+                <th>Kategori & Uraian</th>
+                <th>Rekening / Kas</th>
+                <th>Nominal (Rp)</th>
+                <th>Status Verifikasi</th>
+                <th>Bukti / Struk</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>
+                  <span class="date-main">25 Sep 2026</span>
+                  <span class="time-sub">09:15 WIB</span>
+                </td>
+                <td>
+                  <strong class="log-title">Honor Gaji 2 Personil Satpam Shift Pagi & Malam</strong>
+                  <span class="log-sub">Pos: Keamanan & Lingkungan</span>
+                </td>
+                <td><span class="bank-pill">BCA Rekening Kas RT</span></td>
+                <td><strong class="text-danger-amount">-Rp 4.000.000</strong></td>
+                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
+                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="date-main">24 Sep 2026</span>
+                  <span class="time-sub">14:40 WIB</span>
+                </td>
+                <td>
+                  <strong class="log-title">Setoran Pembayaran QRIS Warga (Blok A1-A10)</strong>
+                  <span class="log-sub">Pos: Iuran Wajib Bulanan Sampah + Keamanan</span>
+                </td>
+                <td><span class="bank-pill">QRIS Auto-Settlement</span></td>
+                <td><strong class="text-success-amount">+Rp 1.150.000</strong></td>
+                <td><span class="status-verify-tag green"><i class="fa-solid fa-bolt"></i> Otomatis</span></td>
+                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="date-main">22 Sep 2026</span>
+                  <span class="time-sub">11:10 WIB</span>
+                </td>
+                <td>
+                  <strong class="log-title">Penggantian Lampu LED Sorot PJU Blok B2</strong>
+                  <span class="log-sub">Pos: Sarana & Fasilitas Umum</span>
+                </td>
+                <td><span class="bank-pill">Petty Cash Tunai RT</span></td>
+                <td><strong class="text-danger-amount">-Rp 150.000</strong></td>
+                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
+                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="date-main">20 Sep 2026</span>
+                  <span class="time-sub">16:00 WIB</span>
+                </td>
+                <td>
+                  <strong class="log-title">Dana Hibah/Donasi Warga (Kavling B-08)</strong>
+                  <span class="log-sub">Pos: Perbaikan Taman Serbaguna & Paving</span>
+                </td>
+                <td><span class="bank-pill">Bank Rekening Kas RT</span></td>
+                <td><strong class="text-success-amount">+Rp 2.500.000</strong></td>
+                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
+                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="date-main">18 Sep 2026</span>
+                  <span class="time-sub">10:30 WIB</span>
+                </td>
+                <td>
+                  <strong class="log-title">Pembayaran Retribusi Kontainer Sampah DLH</strong>
+                  <span class="log-sub">Pos: Kebersihan Lingkungan</span>
+                </td>
+                <td><span class="bank-pill">BCA Rekening Kas RT</span></td>
+                <td><strong class="text-danger-amount">-Rp 2.750.000</strong></td>
+                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
+                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- MODAL POPUP CATAT ALOKASI & KAS KELUAR -->
+  <div id="modalCatatAlokasi" class="modal-overlay">
+    <div class="modal-container">
+      
+      <!-- MODAL HEADER -->
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-icon-box">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
+          <div>
+            <div class="modal-title-row">
+              <h2>Catat Alokasi & Kas Keluar</h2>
+              <span class="modal-badge-sub">Buku Kas RT 04 • September 2026</span>
+            </div>
+            <p class="modal-desc">
+              Pencatatan mutasi kas paguyuban, bukti nota kuitansi, dan alokasi anggaran operasional klaster.
+            </p>
+          </div>
+        </div>
+        <button type="button" id="closeModalBtn" class="btn-close-modal">&times;</button>
+      </div>
+
+      <!-- MODAL BODY (SCROLLABLE) -->
+      <div class="modal-body">
+        
+        <!-- BAGIAN A -->
+        <div class="modal-section">
+          <div class="section-title-bar">
+            <span class="section-badge-title">• BAGIAN A • INFORMASI BUKTI & WAKTU TRANSAKSI</span>
+            <span class="sync-id">ID Sinkron: #LOG-2609</span>
+          </div>
+
+          <div class="form-row-3col">
+            <div class="form-group-modal">
+              <div class="label-with-badge">
+                <label>Nomor Bukti / Kuitansi</label>
+                <span class="badge-auto">Otomatis</span>
+              </div>
+              <div class="input-read-only"># KWT/2026/09/OUT-843</div>
+            </div>
+
+            <div class="form-group-modal">
+              <label>Tanggal Transaksi</label>
+              <div class="input-icon-box">
+                <i class="fa-regular fa-calendar"></i>
+                <input type="text" value="26 September 2026">
+              </div>
+            </div>
+
+            <div class="form-group-modal">
+              <label>Waktu</label>
+              <div class="input-icon-box">
+                <i class="fa-regular fa-clock"></i>
+                <input type="text" value="10:30 WIB">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group-modal margin-top-12">
+            <label>Jenis Alokasi Pengeluaran</label>
+            <div class="toggle-btn-group">
+              <button type="button" class="btn-toggle-tab active">
+                <i class="fa-solid fa-receipt"></i> Pengeluaran / Beban Operasional
+              </button>
+              <button type="button" class="btn-toggle-tab">
+                <i class="fa-regular fa-clock"></i> Alokasi Dana Khusus / Cadangan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGIAN B -->
+        <div class="modal-section">
+          <div class="section-title-bar">
+            <span class="section-badge-title">• BAGIAN B • POS ANGGARAN & NOMINAL REALISASI</span>
+            <span class="plafon-badge-green"><i class="fa-solid fa-circle-check"></i> Sisa Plafon Pos: Rp 7.550.000 (Aman)</span>
+          </div>
+
+          <div class="form-row-2col-custom">
+            <div class="form-group-modal">
+              <label>Kategori & Pos Anggaran Klaster</label>
+              <div class="select-box-modal">
+                <i class="fa-solid fa-faucet-drip"></i>
+                <select>
+                  <option selected>Listrik PJU & Pompa Air Fasum</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-modal">
+              <div class="label-with-badge">
+                <label>Nominal Kas Keluar</label>
+                <span class="currency-label">Rupiah (IDR)</span>
+              </div>
+              <div class="nominal-input-box">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <input type="text" value="Rp 1.250.000">
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-add-row">
+            <span class="quick-label">Tambah Cepat:</span>
+            <button type="button" class="btn-quick">+ Rp 100 rb</button>
+            <button type="button" class="btn-quick">+ Rp 500 rb</button>
+            <button type="button" class="btn-quick">+ Rp 1 jt</button>
+            <button type="button" class="btn-quick">+ Rp 5 jt</button>
+          </div>
+        </div>
+
+        <!-- BAGIAN C -->
+        <div class="modal-section">
+          <div class="section-title-bar">
+            <span class="section-badge-title">• BAGIAN C • SUMBER DANA KAS & VERIFIKASI</span>
+          </div>
+
+          <label class="section-sub-label">Pilih Rekening Sumber Kas</label>
+          <div class="rekening-cards-grid">
+            
+            <label class="rekening-card active">
+              <div class="rekening-header">
+                <i class="fa-solid fa-building-columns icon-bank"></i>
+                <input type="radio" name="rekening" checked>
+              </div>
+              <strong>BCA Kas RT</strong>
+              <span class="rek-num">827-019-4821</span>
+              <span class="rek-saldo green">Saldo: Rp 46.470.000</span>
+            </label>
+
+            <label class="rekening-card">
+              <div class="rekening-header">
+                <i class="fa-solid fa-wallet icon-bank"></i>
+                <input type="radio" name="rekening">
+              </div>
+              <strong>Kas Kecil Tunai</strong>
+              <span class="rek-num">Petty Cash RT 04</span>
+              <span class="rek-saldo green">Saldo: Rp 2.450.000</span>
+            </label>
+
+            <label class="rekening-card">
+              <div class="rekening-header">
+                <i class="fa-solid fa-qrcode icon-bank"></i>
+                <input type="radio" name="rekening">
+              </div>
+              <strong>QRIS Settlement</strong>
+              <span class="rek-num">Penampungan Iuran</span>
+              <span class="rek-saldo green">Saldo: Rp 8.120.000</span>
+            </label>
+
+          </div>
+
+          <div class="form-row-2col margin-top-12">
+            <div class="form-group-modal">
+              <label>Pihak Penerima Dana / Vendor / Teknisi</label>
+              <div class="input-icon-box">
+                <i class="fa-solid fa-store"></i>
+                <input type="text" value="Toko Listrik Sinar Terang / Bpk. Slamet">
+              </div>
+            </div>
+
+            <div class="form-group-modal">
+              <label>Status Otorisasi Dokumen</label>
+              <div class="radio-status-group">
+                <label class="radio-status-pill active">
+                  <input type="radio" name="otorisasi" checked>
+                  <span class="green-dot-pill"></span> Sah (Biro Keuangan)
+                </label>
+                <label class="radio-status-pill">
+                  <input type="radio" name="otorisasi">
+                  Menunggu Pak RT
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGIAN D -->
+        <div class="modal-section">
+          <div class="section-title-bar">
+            <span class="section-badge-title">• BAGIAN D • URAIAN KEPERLUAN & LAMPIRAN BUKTI</span>
+          </div>
+
+          <div class="form-group-modal">
+            <label>Uraian Keterangan & Rincian Pengeluaran</label>
+            <textarea class="modal-textarea" rows="3">Pembelian 2 unit lampu sorot LED 100W pengganti PJU Blok B yang korsleting, kabel instalasi 30m, serta honor teknisi kelistrikan.</textarea>
+          </div>
+
+          <div class="form-group-modal margin-top-12">
+            <div class="label-with-badge">
+              <label>Lampiran Bukti Kuitansi / Slip Transfer</label>
+              <span class="max-size-info">Maksimal 5MB (JPG, PNG, PDF)</span>
+            </div>
+            <div class="upload-dropzone">
+              <i class="fa-solid fa-receipt upload-icon"></i>
+              <span class="upload-text">Bukti Penggunaan Dana</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MODAL FOOTER -->
+      <div class="modal-footer">
+        <button type="button" id="cancelModalBtn" class="btn-modal-cancel">
+          <i class="fa-solid fa-circle-xmark"></i> Batal
+        </button>
+        <button type="button" class="btn-modal-submit">
+          <i class="fa-solid fa-plus"></i> Simpan dan Tambahkan Mutasi
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT KONTROL MODAL POPUP -->
+  <script>
+    const openModalBtn = document.getElementById('openModalCatatAlokasi');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const cancelModalBtn = document.getElementById('cancelModalBtn');
+    const modal = document.getElementById('modalCatatAlokasi');
+
+    if (openModalBtn && modal) {
+      openModalBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

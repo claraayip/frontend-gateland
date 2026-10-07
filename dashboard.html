@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - GateLand</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- FontAwesome untuk Ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Google Inter -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- SIDEBAR NAVIGASI -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">
+          <i class="fa-solid fa-building-user logo-icon"></i>
+          <span class="brand-name">GateLand</span>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-title">NAVIGASI UTAMA</span>
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="dashboard.html">
+              <i class="fa-solid fa-border-all"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="penghuni.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Penghuni</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="iuran.html">
+              <i class="fa-solid fa-wallet"></i>
+              <span>Iuran</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="laporan.html">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Laporan</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pengaturan.html">
+              <i class="fa-solid fa-gear"></i>
+              <span>Pengaturan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- User Profile Sidebar Bottom -->
+      <div class="user-sidebar-card">
+        <div class="user-avatar-circle">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Andi Putra Wijaya</span>
+          <span class="user-role">Pengelola</span>
+          <div class="user-status">
+            <span class="status-dot"></span> Online
+          </div>
+        </div>
+        <a href="index.html" class="btn-logout" title="Keluar">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR / HEADER -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Cari data warga, unit kavling, bukti iuran...">
+        </div>
+
+        <div class="topbar-actions">
+          <button class="btn-announcement">
+            <!-- UBAH BAGIAN INI DI dashboard.html -->
+            <a href="buatpengumuman.html" class="btn-announcement">
+              <i class="fa-solid fa-bullhorn"></i> + Buat Pengumuman
+            </a>
+          </button>
+
+          <div class="admin-badge">
+            <span class="admin-text">Admin Aktif</span>
+            <span class="location-text">GateLand RT 04 / RW 08</span>
+            <i class="fa-solid fa-circle-user admin-avatar"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD BODY CONTENT -->
+      <div class="dashboard-body">
+
+        <!-- HERO BANNER -->
+        <section class="hero-banner">
+          <div class="banner-badge">
+            <span class="dot-active"></span> Sistem Pembukuan Realtime Aktif • Periode September 2026
+          </div>
+          <h1 class="banner-title">Selamat Datang Kembali, Bpk. Andi Putra Wijaya</h1>
+          <p class="banner-subtitle">
+            Ringkasan operasional dan pembukuan iuran klaster <strong>GateLand RT 04 / RW 08</strong>. Pantau arus kas masuk, verifikasi konfirmasi warga, dan kelola ketertiban lingkungan secara presisi.
+          </p>
+        </section>
+
+        <!-- STAT CARDS ROW -->
+        <section class="stat-cards-grid">
+          
+          <!-- Card 1 -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <div>
+                <span class="stat-label">TOTAL IURAN TERKUMPUL</span>
+                <h2 class="stat-value">Rp 7.350.000</h2>
+              </div>
+              <div class="stat-icon-box primary-bg">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: 75%;"></div>
+              </div>
+              <span class="progress-target">Target Rp 45.000.000</span>
+            </div>
+            <div class="stat-footer">
+              <span class="badge-growth">+12.4% bln lalu</span>
+              <span class="stat-subtext">Sisa Rp 2.150.000</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <div>
+                <span class="stat-label">STATUS PEMBAYARAN LUNAS</span>
+                <h2 class="stat-value">67 unit</h2>
+              </div>
+              <div class="stat-icon-box success-bg">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill success" style="width: 90%;"></div>
+              </div>
+              <span class="progress-target">Dari 72 unit berpenghuni</span>
+            </div>
+            <div class="stat-footer">
+              <span class="stat-subtext">55 bayar via QRIS otomatis</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <div>
+                <span class="stat-label">BELUM LUNAS / MENUNGGAK</span>
+                <h2 class="stat-value alert-text">5 unit</h2>
+              </div>
+              <div class="stat-icon-box danger-bg">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+            </div>
+            <div class="stat-footer-right">
+              <span class="stat-subtext">Total Nilai Tagihan</span>
+              <span class="alert-amount">Rp 175.000</span>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- MAIN GRID: VERIFIKASI & AKTIVITAS -->
+        <section class="middle-grid">
+          
+          <!-- LEFT COLUMN: VERIFIKASI PEMBAYARAN -->
+          <div class="card-box verifikasi-box">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">Verifikasi Pembayaran Iuran</h3>
+                <p class="card-desc">Konfirmasi bukti transfer masuk dari warga sebelum kuitansi digital diterbitkan</p>
+              </div>
+              <div class="tab-buttons">
+                <button class="tab-btn active">Perlu Tindakan <span class="badge-count">4</span></button>
+                <button class="tab-btn">Semua (150)</button>
+                <button class="tab-btn">Lunas</button>
+                <button class="tab-btn">Tunggakan</button>
+              </div>
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>PENGHUNI & UNIT</th>
+                    <th>POS IURAN</th>
+                    <th>NOMINAL</th>
+                    <th>KANAL & BUKTI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-blue">AZ</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Azizah Pratama</strong>
+                          <span class="user-sub">Blok B4 / No. 12 • September 2026</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue">Iuran Kebersihan dan Keamanan</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 175.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-building-columns"></i> BCA Transfer <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-purple">HK</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Rahayu Eka</strong>
+                          <span class="user-sub">Blok A2 / No. 05 • September 2026</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue">Iuran Rutin</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 200.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-building-columns"></i> BRI Transfer <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-footer flex-between">
+              <span class="footer-info">Menampilkan 4 pembayaran yang membutuhkan validasi manual bendahara</span>
+              <a href="#" class="link-more">Buka Riwayat Lengkap Seluruh Iuran <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: AKTIVITAS TERBARU -->
+          <div class="card-box activity-box">
+            <div class="activity-header">
+              <h3 class="card-title"><i class="fa-regular fa-clock"></i> Aktivitas Terbaru</h3>
+              <span class="live-tag">• Live</span>
+            </div>
+
+            <div class="timeline">
+              
+              <div class="timeline-item">
+                <div class="timeline-icon icon-success">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="timeline-content">
+                  <strong>Iuran Kas RT Disetujui</strong>
+                  <p>Ibu Maya (A1/04) kuitansi resmi otomatis terkirim.</p>
+                  <span class="timeline-meta">14:40 WIB • oleh Bpk. Bambang</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-rose">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <div class="timeline-content">
+                  <strong>Pengingat Tagihan Otomatis</strong>
+                  <p>WhatsApp bot berhasil menjangkau 8 nomor kepala keluarga.</p>
+                  <span class="timeline-meta">11:00 WIB • Sistem GateLand</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-purple">
+                  <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <div class="timeline-content">
+                  <strong>Warga Baru Terdaftar</strong>
+                  <p>Bpk. Dimas Pratama (Blok D1/02) telah mengaktifkan akun mobile.</p>
+                  <span class="timeline-meta">09:15 WIB • Mandiri</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-purple">
+                  <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <div class="timeline-content">
+                  <strong>Warga Baru Terdaftar</strong>
+                  <p>Bpk. Dimas Pratama (Blok D1/02) telah mengaktifkan akun mobile.</p>
+                  <span class="timeline-meta">09:15 WIB • Mandiri</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-blue">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <div class="timeline-content">
+                  <strong>Pengumuman Terbit</strong>
+                  <p>"Jadwal Penjemputan Sampah Daur Ulang Setiap Kamis Pagi"</p>
+                  <span class="timeline-meta">Kemarin, 19:30 WIB</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+        <!-- BOTTOM SECTION: DISTRIBUSI & ALOKASI ANGGARAN -->
+        <section class="card-box budget-section">
+          <div class="budget-header">
+            <h3 class="card-title">Distribusi & Alokasi Anggaran Bulanan</h3>
+            <p class="card-desc">Proyeksi penyaluran kas iuran operasional Klaster GateLand per September 2026</p>
+          </div>
+
+          <!-- Multi-segment progress bar -->
+          <div class="segmented-bar">
+            <div class="segment seg-primary" style="width: 45%;"></div>
+            <div class="segment seg-secondary" style="width: 35%;"></div>
+            <div class="segment seg-rose" style="width: 20%;"></div>
+          </div>
+
+          <!-- Budget cards grid -->
+          <div class="budget-grid">
+            
+            <div class="budget-card">
+              <div class="budget-card-header">
+                <span class="dot-legend dot-primary"></span>
+                <div>
+                  <h4 class="budget-name">Keamanan & Satpam Pos</h4>
+                  <p class="budget-desc">Honor 4 personel, patroli malam, & gerbang RFID</p>
+                </div>
+                <span class="portion-badge">45% Porsi</span>
+              </div>
+              <h3 class="budget-amount">Rp 19.282.500</h3>
+              <span class="status-pill green-pill">Terbayar Terjadwal (Tgl 25)</span>
+            </div>
+
+            <div class="budget-card">
+              <div class="budget-card-header">
+                <span class="dot-legend dot-secondary"></span>
+                <div>
+                  <h4 class="budget-name">Kebersihan & Angkut Sampah</h4>
+                  <p class="budget-desc">Retribusi armada sampah 3x seminggu & taman RT</p>
+                </div>
+                <span class="portion-badge">35% Porsi</span>
+              </div>
+              <h3 class="budget-amount">Rp 14.997.500</h3>
+              <span class="status-pill purple-pill">Tercukupi Penuh</span>
+            </div>
+
+            <div class="budget-card">
+              <div class="budget-card-header">
+                <span class="dot-legend dot-rose"></span>
+                <div>
+                  <h4 class="budget-name">Dana Sosial & Perawatan</h4>
+                  <p class="budget-desc">Lampu jalan PJU, santunan warga, kas cadangan</p>
+                </div>
+                <span class="portion-badge">20% Porsi</span>
+              </div>
+              <h3 class="budget-amount">Rp 8.570.000</h3>
+              <span class="status-pill rose-pill">Masuk Kas Abadi</span>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

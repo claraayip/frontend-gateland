@@ -1,0 +1,438 @@
+/* =========================================================
+   STYLE KHUSUS HALAMAN BUAT MASTER POS IURAN BARU
+   ========================================================= */
+
+/* HERO CARD BUAT IURAN */
+.iuran-hero-card {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-left-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.hero-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hero-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.hero-right-badge {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-icon-kk {
+  width: 32px;
+  height: 32px;
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.badge-kk-text strong {
+  font-size: 13px;
+  display: block;
+}
+
+.badge-kk-text span {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+/* STEP HEADER */
+.section-step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.step-num-badge {
+  width: 26px;
+  height: 26px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.step-subtitle {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: block;
+}
+
+.badge-tag-mandatory {
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-left: auto;
+}
+
+/* SASARAN UNIT GRID */
+.sasaran-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sasaran-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sasaran-card.active {
+  border-color: var(--primary-color);
+  background-color: #e0e7ff;
+}
+
+.sasaran-radio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sasaran-radio-header strong {
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.sasaran-amount-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 6px 0 2px 0;
+}
+
+.sasaran-desc {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+/* SKEMA & BESARAN NOMINAL */
+.skema-box-wrapper {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.skema-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.tab-type-pills {
+  display: flex;
+  gap: 6px;
+  background-color: #e2e8f0;
+  padding: 4px;
+  border-radius: 16px;
+}
+
+.tab-pill {
+  border: none;
+  background: transparent;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.tab-pill.active {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.amount-display-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  margin-bottom: 12px;
+}
+
+.currency-symbol {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-right: 8px;
+}
+
+.amount-input {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.time-unit-badge {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.preset-nominal-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.preset-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.btn-preset {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.btn-preset.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+}
+
+/* REKENING KAS RT CARD & TOGGLE */
+.bank-account-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+}
+
+.bank-logo-badge {
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.bank-details {
+  flex: 1;
+}
+
+.bank-details strong {
+  display: block;
+  font-size: 12px;
+}
+
+.bank-details span {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.bank-status-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.tag-green-pill {
+  background-color: #d1fae5;
+  color: #065f46;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.tag-gray-pill {
+  background-color: #e2e8f0;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.qris-toggle-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+}
+
+.qris-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qris-icon {
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.qris-info strong {
+  font-size: 12px;
+  display: block;
+}
+
+.qris-info p {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+/* CHECKBOX CUSTOM STYLING */
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.checkbox-container input {
+  display: none;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.notification-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checkbox-label-group strong {
+  font-size: 12px;
+  display: block;
+}
+
+.checkbox-label-group p {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}

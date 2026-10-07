@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Pengumuman Baru - GateLand</title>
+  
+  <!-- CSS Utama & CSS Form Pengumuman -->
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="buatpengumuman.css">
+  
+  <!-- FontAwesome & Font Google Inter -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- SIDEBAR NAVIGASI -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">
+          <i class="fa-solid fa-building-user logo-icon"></i>
+          <span class="brand-name">GateLand</span>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-title">NAVIGASI UTAMA</span>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="dashboard.html">
+                <i class="fa-solid fa-border-all"></i>
+                <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="penghuni.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Penghuni</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="iuran.html">
+              <i class="fa-solid fa-wallet"></i>
+              <span>Iuran</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="laporan.html">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Laporan</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pengaturan.html">
+              <i class="fa-solid fa-gear"></i>
+              <span>Pengaturan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- User Profile Sidebar Bottom -->
+      <div class="user-sidebar-card">
+        <div class="user-avatar-circle">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Bpk. Bambang P.</span>
+          <span class="user-role">Ketua RT 04 / RW 08</span>
+          <div class="user-status">
+            <span class="status-dot"></span> Online
+          </div>
+        </div>
+        <a href="index.html" class="btn-logout" title="Keluar">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR / HEADER -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Cari data warga, unit kavling, bukti iuran...">
+        </div>
+
+        <div class="topbar-actions">
+          <a href="buatpengumuman.html" class="btn-announcement">
+            <i class="fa-solid fa-bullhorn"></i> + Buat Pengumuman
+          </a>
+
+          <div class="admin-badge">
+            <span class="admin-text">Admin Aktif</span>
+            <span class="location-text">GateLand RT 04 / RW 08</span>
+            <i class="fa-solid fa-circle-user admin-avatar"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- SUB-HEADER / BREADCRUMB -->
+      <div class="sub-header-bar">
+        <div class="sub-header-left">
+          <div class="breadcrumb">
+            <a href="dashboard.html">Dashboard</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Pengumuman & Warga</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span class="active-crumb">Buat Pengumuman Baru</span>
+          </div>
+          <div class="action-status-group">
+            <a href="dashboard.html" class="btn-back-link">
+              <i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard
+            </a>
+            <span class="mode-editor-badge">• Mode Editor Aktif</span>
+          </div>
+        </div>
+
+        <div class="sub-header-right">
+          <span class="auto-save-text">
+            <i class="fa-regular fa-cloud-check"></i> Draf tersimpan otomatis: <strong>10:47 WIB</strong>
+          </span>
+          <button type="button" class="btn-secondary-outline">
+            <i class="fa-regular fa-floppy-disk"></i> Simpan Draf
+          </button>
+        </div>
+      </div>
+
+      <!-- FORM CONTAINER -->
+      <form id="announcementForm" class="announcement-form">
+        
+        <!-- SECTION 1: DETAIL PENGUMUMAN -->
+        <div class="form-card">
+          <div class="section-title">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <h2>Detail Pengumuman</h2>
+          </div>
+
+          <!-- Judul Pengumuman -->
+          <div class="form-field-group">
+            <div class="field-header">
+              <label for="judul">Judul Pengumuman <span class="required">*</span></label>
+              <span class="char-count">0 / 120 karakter</span>
+            </div>
+            <input type="text" id="judul" class="input-text" value="Kerja Bakti Massal" required>
+            <p class="field-help">Buat judul singkat, jelas, dan memuat tujuan utama pesan.</p>
+          </div>
+
+          <!-- Kategori Pengumuman -->
+          <div class="form-field-group">
+            <label>Kategori Pengumuman <span class="required">*</span></label>
+            <div class="category-grid">
+              <label class="category-chip active">
+                <input type="radio" name="kategori" value="kegiatan" checked>
+                <i class="fa-solid fa-users"></i>
+                <span>Kegiatan</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="kategori" value="perbaikan">
+                <i class="fa-solid fa-wrench"></i>
+                <span>Perbaikan</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="kategori" value="keamanan">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Keamanan</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="kategori" value="iuran">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Iuran</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="kategori" value="umum">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Umum</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Tingkat Urgensi / Prioritas -->
+          <div class="form-field-group">
+            <label>Tingkat Urgensi / Prioritas Pemberitahuan <span class="required">*</span></label>
+            <div class="urgency-grid">
+              
+              <label class="urgency-card">
+                <div class="urgency-header">
+                  <span class="urgency-badge badge-biasa">Biasa</span>
+                  <input type="radio" name="urgensi" value="biasa">
+                </div>
+                <strong class="urgency-title">Info Rutin</strong>
+                <p class="urgency-desc">Update santai berkala</p>
+              </label>
+
+              <label class="urgency-card active">
+                <div class="urgency-header">
+                  <span class="urgency-badge badge-agenda">Agenda</span>
+                  <input type="radio" name="urgensi" value="agenda" checked>
+                </div>
+                <strong class="urgency-title">Acara Warga</strong>
+                <p class="urgency-desc">Butuh kehadiran warga</p>
+              </label>
+
+              <label class="urgency-card">
+                <div class="urgency-header">
+                  <span class="urgency-badge badge-penting">Penting</span>
+                  <input type="radio" name="urgensi" value="penting">
+                </div>
+                <strong class="urgency-title">Wajib Tahu</strong>
+                <p class="urgency-desc">Perlu respon/perhatian</p>
+              </label>
+
+              <label class="urgency-card">
+                <div class="urgency-header">
+                  <span class="urgency-badge badge-darurat">Darurat</span>
+                  <input type="radio" name="urgensi" value="darurat">
+                </div>
+                <strong class="urgency-title">Segera & Kritis</strong>
+                <p class="urgency-desc">Notifikasi push instan</p>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Isi & Uraian Pengumuman -->
+          <div class="form-field-group">
+            <label for="isi">Isi & Uraian Pengumuman <span class="required">*</span></label>
+            <textarea id="isi" class="textarea-input" rows="6" required>Yth. Bapak/Ibu Warga RT 04 / RW 08,
+
+Menghadapi datangnya intensitas curah hujan tinggi akhir bulan ini, Pengurus RT 04 mengundang seluruh warga untuk berpartisipasi dalam agenda Kerja Bakti Lingkungan.
+
+Fokus kegiatan:
+1. Pengecekan dan pembersihan endapan sedimen got depan rumah masing-masing serta saluran utama Blok A, B, dan C.</textarea>
+          </div>
+
+          <!-- Lokasi / Titik Kumpul -->
+          <div class="form-field-group">
+            <div class="field-header">
+              <label for="lokasi">Lokasi / Titik Kumpul Kegiatan</label>
+              <span class="optional-tag">(Wajib diisi bila berupa acara tatap muka)</span>
+            </div>
+            <input type="text" id="lokasi" class="input-text" value="Lingkungan RT 04 / RW 08 Cluster Sekar Indah">
+          </div>
+        </div>
+
+        <!-- SECTION 2: JADWAL & WAKTU -->
+        <div class="form-card border-box">
+          <div class="section-title">
+            <i class="fa-regular fa-clock"></i>
+            <h2>Jadwal & Waktu</h2>
+          </div>
+          
+          <p class="sub-section-title">Waktu Pelaksanaan Acara / Kegiatan</p>
+
+          <div class="form-row-2col">
+            <div class="form-field-group">
+              <label for="tanggal">Tanggal Kegiatan:</label>
+              <input type="text" id="tanggal" class="input-text" value="Minggu, 29 September 2026">
+            </div>
+            <div class="form-field-group">
+              <label for="jam">Jam / Durasi:</label>
+              <input type="text" id="jam" class="input-text" value="07:00 - 11:30 WIB">
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: SALURAN & TARGET DISTRIBUSI -->
+        <div class="form-card border-box">
+          <div class="section-title">
+            <i class="fa-solid fa-share-nodes"></i>
+            <h2>Saluran & Target Distribusi</h2>
+          </div>
+
+          <p class="sub-section-title">Lingkup Warga Penerima:</p>
+
+          <div class="distribution-options">
+            
+            <label class="distribution-card active">
+              <input type="radio" name="target_warga" value="seluruh" checked>
+              <div class="distribution-info">
+                <strong>Seluruh Warga RT 04</strong>
+                <span>Total 72 unit rumah</span>
+              </div>
+            </label>
+
+            <label class="distribution-card">
+              <input type="radio" name="target_warga" value="blok_tertentu">
+              <div class="distribution-info">
+                <strong>Pilih Blok Tertentu</strong>
+                <span>Misal hanya Blok A & Blok B yang terdampak perbaikan.</span>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- BOTTOM ACTION BAR -->
+        <div class="bottom-action-bar">
+          <a href="dashboard.html" class="btn-cancel">
+            <i class="fa-solid fa-arrow-left"></i> Batal / Kembali ke Dashboard
+          </a>
+
+          <div class="action-buttons-right">
+            <button type="button" class="btn-secondary-outline">
+              <i class="fa-regular fa-floppy-disk"></i> Simpan Draf
+            </button>
+            <button type="submit" class="btn-primary-publish">
+              <i class="fa-solid fa-bullhorn"></i> Publikasikan Pengumuman
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+    </main>
+
+  </div>
+
+  <script>
+    // Event penanganan klik kategori chip
+    const categoryChips = document.querySelectorAll('.category-chip');
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        categoryChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      });
+    });
+
+    // Event penanganan klik urgency card
+    const urgencyCards = document.querySelectorAll('.urgency-card');
+    urgencyCards.forEach(card => {
+      card.addEventListener('click', () => {
+        urgencyCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+
+    // Event penanganan klik distribution card
+    const distCards = document.querySelectorAll('.distribution-card');
+    distCards.forEach(card => {
+      card.addEventListener('click', () => {
+        distCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+
+    // Event submit form
+    document.getElementById('announcementForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Pengumuman berhasil dipublikasikan!');
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+
+</body>
+</html>

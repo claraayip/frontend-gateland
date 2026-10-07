@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Master Pos Iuran Baru - GateLand</title>
+  
+  <!-- CSS Utama, CSS Form Pengumuman, & CSS Form Buat Iuran -->
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="buatpengumuman.css">
+  <link rel="stylesheet" href="buatiuran.css">
+  
+  <!-- FontAwesome & Font Google Inter -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- SIDEBAR NAVIGASI -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">
+          <i class="fa-solid fa-building-user logo-icon"></i>
+          <span class="brand-name">GateLand</span>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-title">NAVIGASI UTAMA</span>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="dashboard.html">
+              <i class="fa-solid fa-border-all"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="penghuni.html">
+              <i class="fa-solid fa-users"></i>
+              <span>Penghuni</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="iuran.html">
+              <i class="fa-solid fa-wallet"></i>
+              <span>Iuran</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="laporan.html">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Laporan</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <i class="fa-solid fa-gear"></i>
+              <span>Pengaturan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- User Profile Sidebar Bottom -->
+      <div class="user-sidebar-card">
+        <div class="user-avatar-circle">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Bpk. Bambang P.</span>
+          <span class="user-role">Ketua RT 04 / RW 08</span>
+          <div class="user-status">
+            <span class="status-dot"></span> Online
+          </div>
+        </div>
+        <a href="index.html" class="btn-logout" title="Keluar">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR / HEADER -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Cari data warga, unit kavling, bukti iuran...">
+        </div>
+
+        <div class="topbar-actions">
+          <a href="buatiuran.html" class="btn-announcement">
+            <i class="fa-solid fa-plus"></i> + Buat Iuran
+          </a>
+
+          <div class="admin-badge">
+            <span class="admin-text">Admin Aktif</span>
+            <span class="location-text">GateLand RT 04 / RW 08</span>
+            <i class="fa-solid fa-circle-user admin-avatar"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- SUB-HEADER / BREADCRUMB BAR -->
+      <div class="sub-header-bar">
+        <div class="sub-header-left">
+          <div class="breadcrumb">
+            <a href="dashboard.html">Dashboard</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="iuran.html">Iuran & Tagihan</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span class="active-crumb">Buat Master Pos Iuran Baru</span>
+          </div>
+          <div class="action-status-group">
+            <a href="iuran.html" class="btn-back-link">
+              <i class="fa-solid fa-arrow-left"></i> Kembali ke Manajemen Iuran
+            </a>
+            <span class="mode-editor-badge">• Mode Input Pos Iuran Aktif</span>
+          </div>
+        </div>
+
+        <div class="sub-header-right">
+          <span class="auto-save-text">
+            Draf tersimpan otomatis: <strong>10:45 WIB</strong>
+          </span>
+          <button type="button" class="btn-secondary-outline">
+            <i class="fa-regular fa-floppy-disk"></i> Simpan Draf
+          </button>
+        </div>
+      </div>
+
+      <!-- HERO BANNER BUAT MASTER POS IURAN -->
+      <section class="iuran-hero-card">
+        <div class="hero-left-info">
+          <div class="hero-icon-box">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
+          <div>
+            <h2 class="hero-title">Buat Master Pos Iuran Baru</h2>
+            <p class="hero-desc">
+              Terbitkan skema tagihan iuran baru untuk seluruh warga klaster, blok tertentu, atau iuran kegiatan insidental secara terstruktur dan terotomatisasi.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-right-badge">
+          <div class="badge-icon-kk"><i class="fa-solid fa-users"></i></div>
+          <div class="badge-kk-text">
+            <strong>72 Unit KK</strong>
+            <span>Terhubung di Klaster GateLand RT 04 / RW 08</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORM CONTAINER -->
+      <form id="iuranForm" class="announcement-form">
+        
+        <!-- SECTION 1: DETAIL MASTER IURAN -->
+        <div class="form-card">
+          <div class="section-step-header">
+            <span class="step-num-badge">1</span>
+            <div>
+              <h2 class="step-title">Detail Master Iuran</h2>
+              <span class="step-subtitle">Langkah 1 dari 2: Informasi dasar pos, preset & sasaran</span>
+            </div>
+            <span class="badge-tag-mandatory">Wajib Diisi</span>
+          </div>
+
+          <!-- Nama Iuran -->
+          <div class="form-field-group">
+            <div class="field-header">
+              <label for="namaIuran">Nama Iuran <span class="required">*</span></label>
+              <span class="char-count">36 / 60</span>
+            </div>
+            <input type="text" id="namaIuran" class="input-text" value="Iuran Perawatan Lampu PJU & CCTV 2026" required>
+            <p class="field-help">Buat nama pos iuran yang jelas, mudah dipahami warga, dan transparan.</p>
+          </div>
+
+          <!-- Tipe & Sifat Iuran -->
+          <div class="form-field-group">
+            <label>Tipe & Sifat Iuran <span class="required">*</span></label>
+            <div class="category-grid">
+              <label class="category-chip active">
+                <input type="radio" name="tipe_iuran" value="wajib_rutin" checked>
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Wajib Rutin</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="tipe_iuran" value="khusus">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>Khusus / Proyek</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="tipe_iuran" value="insidental">
+                <i class="fa-solid fa-wrench"></i>
+                <span>Insidental</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="tipe_iuran" value="sukarela">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span>Sukarela / Donasi</span>
+              </label>
+              <label class="category-chip">
+                <input type="radio" name="tipe_iuran" value="lainnya">
+                <i class="fa-solid fa-users"></i>
+                <span>Lainnya</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Sasaran Unit Penghuni -->
+          <div class="form-field-group">
+            <label>Sasaran Unit Penghuni <span class="required">*</span></label>
+            <div class="sasaran-grid">
+              
+              <label class="sasaran-card active">
+                <div class="sasaran-radio-header">
+                  <strong>Semua Warga</strong>
+                  <input type="radio" name="sasaran" value="semua" checked>
+                </div>
+                <h3 class="sasaran-amount-title">72 KK</h3>
+                <p class="sasaran-desc">Seluruh unit terdaftar</p>
+              </label>
+
+              <label class="sasaran-card">
+                <div class="sasaran-radio-header">
+                  <strong>Unit Dihuni</strong>
+                  <input type="radio" name="sasaran" value="dihuni">
+                </div>
+                <h3 class="sasaran-amount-title">72 KK</h3>
+                <p class="sasaran-desc">Pemilik rumah aktif</p>
+              </label>
+
+              <label class="sasaran-card">
+                <div class="sasaran-radio-header">
+                  <strong>Pilih Blok</strong>
+                  <input type="radio" name="sasaran" value="blok">
+                </div>
+                <h3 class="sasaran-amount-title">Blok A – C</h3>
+                <p class="sasaran-desc">Pilihan kavling tertentu</p>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Skema & Besaran Nominal Tagihan -->
+          <div class="form-field-group">
+            <div class="skema-box-wrapper">
+              <div class="skema-header-row">
+                <label class="no-margin">Skema & Besaran Nominal Tagihan <span class="required">*</span></label>
+                <div class="tab-type-pills">
+                  <button type="button" class="tab-pill active">Flat per Rumah / KK</button>
+                  <button type="button" class="tab-pill">Proporsional Kavling</button>
+                </div>
+              </div>
+
+              <!-- Big Input Amount Display -->
+              <div class="amount-display-box">
+                <span class="currency-symbol">Rp</span>
+                <input type="text" class="amount-input" value="20.000">
+                <span class="time-unit-badge">/bulan</span>
+              </div>
+
+              <!-- Preset Buttons Row -->
+              <div class="preset-nominal-row">
+                <span class="preset-label">Preset Nominal:</span>
+                <button type="button" class="btn-preset">Rp 15.000</button>
+                <button type="button" class="btn-preset active">Rp 20.000</button>
+                <button type="button" class="btn-preset">Rp 30.000</button>
+                <button type="button" class="btn-preset">Rp 50.000</button>
+                <button type="button" class="btn-preset">Rp 75.000</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uraian & Rincian Alokasi Dana Iuran -->
+          <div class="form-field-group">
+            <label for="uraian">Uraian & Rincian Alokasi Dana Iuran</label>
+            <textarea id="uraian" class="textarea-input" rows="4">Dana iuran ini diperuntukkan bagi perawatan rutin lampu penerangan jalan utama (PJU) Blok A s/d D, penggantian sensor otomatis CCTV titik gerbang, serta konsumsi petugas teknisi bulanan.</textarea>
+            
+            <label class="checkbox-container margin-top-10">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+              <span class="checkbox-text">Uraian ini akan muncul di rincian tagihan lembar pembukuan warga.</span>
+            </label>
+          </div>
+
+          <!-- Rekening Kas RT Penerima -->
+          <div class="form-field-group">
+            <label>Rekening Kas RT Penerima</label>
+            
+            <div class="bank-account-card">
+              <div class="bank-logo-badge">BCA</div>
+              <div class="bank-details">
+                <strong>BCA - Kas Paguyuban RT 04 GateLand</strong>
+                <span>No. Rek: 827-029-1920, a.n. Kas Paguyuban Sekar Indah</span>
+              </div>
+              <div class="bank-status-tags">
+                <span class="tag-green-pill">Aktif</span>
+                <span class="tag-gray-pill">Utama</span>
+              </div>
+            </div>
+
+            <!-- Toggle Switch QRIS -->
+            <div class="qris-toggle-box">
+              <div class="qris-info">
+                <i class="fa-solid fa-qrcode qris-icon"></i>
+                <div>
+                  <strong>QRIS Statis & Dinamis Otomatis</strong>
+                  <p>Generasi QRIS instan bagi warga untuk kemudahan verifikasi sistem</p>
+                </div>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SECTION 2: JADWAL & BATAS JATUH TEMPO -->
+        <div class="form-card border-box">
+          <div class="section-step-header">
+            <span class="step-num-badge">2</span>
+            <div>
+              <h2 class="step-title">Jadwal & Batas Jatuh Tempo</h2>
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-field-group">
+              <label for="frekuensi">Frekuensi Tagihan:</label>
+              <input type="text" id="frekuensi" class="input-text" value="Bulanan (Setiap Bulan)">
+            </div>
+            <div class="form-field-group">
+              <label for="jatuhTempo">Batas Jatuh Tempo:</label>
+              <input type="text" id="jatuhTempo" class="input-text" value="Setiap Tanggal 10">
+            </div>
+          </div>
+
+          <div class="form-field-group no-margin">
+            <label for="mulaiBerlaku">Mulai Berlaku Pada Periode:</label>
+            <input type="text" id="mulaiBerlaku" class="input-text" value="Oktober 2026">
+          </div>
+        </div>
+
+        <!-- SECTION 3: OTOMASI & KANAL PEMBERITAHUAN -->
+        <div class="form-card border-box">
+          <div class="section-title">
+            <i class="fa-solid fa-bell"></i>
+            <h2>Otomasi & Kanal Pemberitahuan</h2>
+          </div>
+
+          <div class="notification-checkboxes">
+            
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+              <div class="checkbox-label-group">
+                <strong>Push Notification Aplikasi GateLand</strong>
+                <p>Kirim notifikasi tagihan otomatis pada tgl 10 awal bulan ke ponsel seluruh warga.</p>
+              </div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+              <div class="checkbox-label-group">
+                <strong>Banner Pengingat di Beranda Warga</strong>
+                <p>Tampilkan banner catatan pos baru pada dashboard warga yang belum membayar.</p>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- BOTTOM ACTION BAR -->
+        <div class="bottom-action-bar">
+          <a href="iuran.html" class="btn-cancel">
+            <i class="fa-solid fa-arrow-left"></i> Batal / Kembali
+          </a>
+
+          <button type="submit" class="btn-primary-publish">
+            <i class="fa-solid fa-bullhorn"></i> Publikasikan Pengumuman
+          </button>
+        </div>
+
+      </form>
+
+    </main>
+
+  </div>
+
+  <script>
+    // Handle category chips selection
+    const categoryChips = document.querySelectorAll('.category-chip');
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        categoryChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      });
+    });
+
+    // Handle sasaran cards selection
+    const sasaranCards = document.querySelectorAll('.sasaran-card');
+    sasaranCards.forEach(card => {
+      card.addEventListener('click', () => {
+        sasaranCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+
+    // Handle preset nominal buttons
+    const presetBtns = document.querySelectorAll('.btn-preset');
+    const amountInput = document.querySelector('.amount-input');
+    presetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        presetBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        amountInput.value = btn.textContent.replace('Rp ', '');
+      });
+    });
+
+    // Handle form submit
+    document.getElementById('iuranForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Master Pos Iuran Baru Berhasil Dipublikasikan!');
+      window.location.href = 'iuran.html';
+    });
+  </script>
+
+</body>
+</html>
