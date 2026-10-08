@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laporan Keuangan & Alokasi Kas - GateLand</title>
   
-  <!-- CSS Utama & CSS Halaman Laporan -->
   <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="laporan.css">
   
-  <!-- FontAwesome & Font Google Inter -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 </head>
@@ -21,7 +19,7 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="brand-logo">
-          <i class="fa-solid fa-building-user logo-icon"></i>
+          <img src="assets/logo gateland.png" alt="GateLand Logo" style="height: 32px; width: auto;">
           <span class="brand-name">GateLand</span>
         </div>
       </div>
@@ -64,19 +62,23 @@
 
       <!-- User Profile Sidebar Bottom -->
       <div class="user-sidebar-card">
-        <div class="user-avatar-circle">
-          <i class="fa-solid fa-user"></i>
+        <div class="user-info-top">
+          <div class="user-avatar-circle">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Bpk. Bambang P.</span>
+            <span class="user-role">Ketua RT 04 / RW 08</span>
+          </div>
         </div>
-        <div class="user-info">
-          <span class="user-name">Bpk. Bambang P.</span>
-          <span class="user-role">Ketua RT 04 / RW 08</span>
+        <div class="user-info-bottom">
           <div class="user-status">
             <span class="status-dot"></span> Online
           </div>
+          <a href="index.html" class="btn-logout" title="Keluar">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+          </a>
         </div>
-        <a href="index.html" class="btn-logout" title="Keluar">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
-        </a>
       </div>
     </aside>
 
@@ -107,226 +109,230 @@
       <div class="page-header-container">
         <div class="page-title-group">
           <div class="badge-header-group">
-            <span class="pill-badge-gray">Klaster Gardenia & Boulevard</span>
+            <span class="pill-badge-gray-text">Klaster Gardenia & Boulevard</span>
             <i class="fa-solid fa-chevron-right breadcrumb-arrow"></i>
-            <span class="pill-badge-gray">Pembukuan & Finansial Kas</span>
+            <span class="pill-badge-gray-text">Pembukuan & Keuangan Kas</span>
             <i class="fa-solid fa-chevron-right breadcrumb-arrow"></i>
-            <span class="pill-badge-purple">Laporan & Rekapitulasi Kas RT 04 / RW 08</span>
+            <span class="pill-badge-purple-text">Laporan & Rekapitulasi Kas RT 04 / RW 08</span>
           </div>
           <h1 class="page-h1-title">
             Laporan Keuangan & Alokasi Kas
-            <span class="pill-active-date">Periode Aktif: September 2026</span>
+            <span class="pill-active-date" style="background-color: #f1f5f9; color: var(--primary-color); border: none;"><span style="color: #10b981; margin-right: 6px;">●</span> Periode Buku: September 2026</span>
           </h1>
-          <p class="page-subtitle">
-            Transparansi rekapitulasi iuran warga, realisasi beban operasional, dan saldo cadangan kas terdaftar secara teratur dan akurat.
+          <p class="page-subtitle" style="font-size: 11px; margin-top: 4px;">
+            Transparansi rekapitulasi iuran warga, realisasi beban operasional, dan cadangan dana likuiditas klaster secara akuntabel.
           </p>
         </div>
 
         <div class="page-actions-group">
-          <div class="select-dropdown-box">
+          <div class="select-dropdown-box" style="background: #ffffff; border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 8px;">
             <span>September 2026</span>
-            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-chevron-down text-secondary"></i>
           </div>
 
-          <button class="btn-outline-action">
-            <i class="fa-solid fa-file-export"></i> Ekspor Laporan <i class="fa-solid fa-chevron-down"></i>
+          <button class="btn-outline-action" style="border: 1px solid var(--border-color); border-radius: 20px; padding: 8px 16px; background: white; font-size: 12px; font-weight: 500;">
+            <i class="fa-solid fa-download" style="color: var(--text-secondary);"></i> Export Laporan <i class="fa-solid fa-chevron-down text-secondary" style="margin-left: 6px;"></i>
           </button>
 
-          <button class="btn-navy-action" id="openModalCatatAlokasi">
+          <button class="btn-navy-action" id="openModalCatatAlokasi" style="background-color: var(--primary-color); color: white; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">
             <i class="fa-solid fa-plus"></i> + Catat Alokasi & Kas Keluar
           </button>
         </div>
       </div>
 
       <!-- TOP STAT CARDS ROW -->
-      <section class="stat-cards-grid">
+      <section class="stat-cards-grid" style="grid-template-columns: 1fr 1fr 1.5fr;">
         
         <!-- Card 1: Kas Masuk -->
-        <div class="stat-card">
-          <div class="stat-header">
-            <div>
-              <span class="stat-label">KAS MASUK (BULAN INI)</span>
-              <h2 class="stat-value">Rp 42.850.000</h2>
-            </div>
-            <div class="stat-icon-box success-light-bg">
-              <i class="fa-solid fa-arrow-trend-up text-success"></i>
-            </div>
+        <div class="stat-card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; padding: 24px;">
+          <div>
+            <span class="stat-label" style="font-size: 10px; color: var(--text-secondary); font-weight: 700; letter-spacing: 0.5px;">KAS MASUK (BULAN INI)</span>
+            <h2 class="stat-value" style="font-size: 24px; margin-top: 8px;">Rp<br>42.850.000</h2>
+          </div>
+          <div class="stat-icon-box success-light-bg" style="background-color: #dcfce7; color: #10b981; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <i class="fa-solid fa-arrow-trend-up"></i>
           </div>
         </div>
 
         <!-- Card 2: Alokasi & Beban -->
-        <div class="stat-card">
-          <div class="stat-header">
-            <div>
-              <span class="stat-label">ALOKASI & BEBAN KAS</span>
-              <h2 class="stat-value">Rp 31.420.000</h2>
-            </div>
-            <div class="stat-icon-box rose-bg">
-              <i class="fa-solid fa-receipt text-rose"></i>
-            </div>
+        <div class="stat-card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; padding: 24px;">
+          <div>
+            <span class="stat-label" style="font-size: 10px; color: var(--text-secondary); font-weight: 700; letter-spacing: 0.5px;">ALOKASI & BEBAN KAS</span>
+            <h2 class="stat-value" style="font-size: 24px; margin-top: 8px;">Rp<br>31.420.000</h2>
+          </div>
+          <div class="stat-icon-box rose-bg" style="background-color: #ffe4e6; color: #f43f5e; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <i class="fa-solid fa-receipt"></i>
           </div>
         </div>
 
         <!-- Card 3: Total Kas Tersimpan (Navy Dark Card) -->
-        <div class="stat-card navy-card">
-          <div class="stat-header">
-            <div>
-              <span class="stat-label-light">TOTAL KAS TERSIMPAN</span>
-              <h2 class="stat-value-light">Rp 148.650.000</h2>
-            </div>
-            <div class="stat-icon-box navy-icon-bg">
-              <i class="fa-solid fa-vault"></i>
-            </div>
+        <div class="stat-card navy-card" style="background-color: var(--primary-color); color: white; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; padding: 24px;">
+          <div>
+            <span class="stat-label-light" style="font-size: 10px; color: #cbd5e1; font-weight: 700; letter-spacing: 0.5px;">TOTAL KAS TERSIMPAN</span>
+            <h2 class="stat-value-light" style="font-size: 24px; margin-top: 8px; color: white;">Rp<br>148.650.000</h2>
+          </div>
+          <div class="stat-icon-box navy-icon-bg" style="background-color: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <i class="fa-solid fa-building-columns"></i>
           </div>
         </div>
 
       </section>
 
       <!-- MIDDLE SECTION 1: GRAFIK & DISTRIBUSI BEBAN -->
-      <section class="middle-report-grid">
+      <section class="middle-report-grid" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; margin-bottom: 24px;">
         
         <!-- LEFT: GRAFIK KAS BULANAN -->
-        <div class="card-box chart-card">
-          <div class="card-header-flex">
+        <div class="card-box chart-card" style="padding: 24px;">
+          <div class="card-header-flex" style="margin-bottom: 24px;">
             <div>
-              <h3 class="card-title">Grafik Kas Bulanan (Apr – Sep 2026)</h3>
-              <p class="card-desc">Perbandingan kas masuk versus alokasi kas keluar operasional</p>
+              <h3 class="card-title">Tren Arus Kas Bulanan (Apr – Sep 2026)</h3>
+              <p class="card-desc" style="font-size: 11px;">Komparasi histori pemasukan iuran versus realisasi alokasi operasional</p>
             </div>
-            <div class="chart-legend">
-              <span class="legend-item"><span class="legend-dot navy-dot"></span> Kas Masuk</span>
-              <span class="legend-item"><span class="legend-dot rose-dot"></span> Kas Keluar</span>
+            <div class="chart-legend" style="display: flex; gap: 12px; font-size: 11px; font-weight: 500;">
+              <span class="legend-item"><span class="legend-dot navy-dot" style="display: inline-block; width: 8px; height: 8px; background: var(--primary-color); margin-right: 4px; border-radius: 2px;"></span> Kas Masuk</span>
+              <span class="legend-item"><span class="legend-dot rose-dot" style="display: inline-block; width: 8px; height: 8px; background: var(--accent-rose); margin-right: 4px; border-radius: 2px;"></span> Kas Keluar</span>
             </div>
           </div>
 
           <!-- VISUAL BAR CHART -->
-          <div class="chart-visual-container">
-            <div class="chart-bars-group">
+          <div class="chart-visual-container" style="height: 200px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 10px; margin-bottom: 24px; position: relative; border-bottom: 1px solid #e2e8f0; border-left: 1px solid #e2e8f0;">
+            <!-- Grid lines mock -->
+            <div style="position: absolute; width: 100%; top: 25%; border-top: 1px dashed #e2e8f0; left: 0;"></div>
+            <div style="position: absolute; width: 100%; top: 50%; border-top: 1px dashed #e2e8f0; left: 0;"></div>
+            <div style="position: absolute; width: 100%; top: 75%; border-top: 1px dashed #e2e8f0; left: 0;"></div>
+            <!-- Labels Y axis -->
+            <div style="position: absolute; left: -30px; top: 0; font-size: 10px; color: var(--text-secondary);">45 jt</div>
+            <div style="position: absolute; left: -30px; top: 25%; font-size: 10px; color: var(--text-secondary);">30 jt</div>
+            <div style="position: absolute; left: -30px; top: 50%; font-size: 10px; color: var(--text-secondary);">15 jt</div>
+            <div style="position: absolute; left: -25px; top: 75%; font-size: 10px; color: var(--text-secondary);">0 jt</div>
+            
+            <div class="chart-bars-group" style="display: flex; justify-content: space-around; width: 100%; height: 100%; align-items: flex-end; position: relative; z-index: 2;">
               
-              <div class="bar-col">
-                <div class="bars-pair">
-                  <div class="bar navy-bar" style="height: 60%;"></div>
-                  <div class="bar rose-bar" style="height: 40%;"></div>
+              <div class="bar-col" style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+                <div class="bars-pair" style="display: flex; gap: 4px; align-items: flex-end; height: 100%;">
+                  <div class="bar navy-bar" style="height: 60%; width: 14px; background: var(--primary-color); border-radius: 2px 2px 0 0;"></div>
+                  <div class="bar rose-bar" style="height: 40%; width: 14px; background: var(--accent-rose); border-radius: 2px 2px 0 0;"></div>
                 </div>
-                <span class="bar-label">Apr</span>
+                <span class="bar-label" style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">Apr</span>
               </div>
 
-              <div class="bar-col">
-                <div class="bars-pair">
-                  <div class="bar navy-bar" style="height: 65%;"></div>
-                  <div class="bar rose-bar" style="height: 45%;"></div>
+              <div class="bar-col" style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+                <div class="bars-pair" style="display: flex; gap: 4px; align-items: flex-end; height: 100%;">
+                  <div class="bar navy-bar" style="height: 65%; width: 14px; background: var(--primary-color); border-radius: 2px 2px 0 0;"></div>
+                  <div class="bar rose-bar" style="height: 45%; width: 14px; background: var(--accent-rose); border-radius: 2px 2px 0 0;"></div>
                 </div>
-                <span class="bar-label">Mei</span>
+                <span class="bar-label" style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">Mei</span>
               </div>
 
-              <div class="bar-col">
-                <div class="bars-pair">
-                  <div class="bar navy-bar" style="height: 70%;"></div>
-                  <div class="bar rose-bar" style="height: 50%;"></div>
+              <div class="bar-col" style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+                <div class="bars-pair" style="display: flex; gap: 4px; align-items: flex-end; height: 100%;">
+                  <div class="bar navy-bar" style="height: 70%; width: 14px; background: var(--primary-color); border-radius: 2px 2px 0 0;"></div>
+                  <div class="bar rose-bar" style="height: 50%; width: 14px; background: var(--accent-rose); border-radius: 2px 2px 0 0;"></div>
                 </div>
-                <span class="bar-label">Jun</span>
+                <span class="bar-label" style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">Jun</span>
               </div>
 
-              <div class="bar-col">
-                <div class="bars-pair">
-                  <div class="bar navy-bar" style="height: 75%;"></div>
-                  <div class="bar rose-bar" style="height: 52%;"></div>
+              <div class="bar-col" style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+                <div class="bars-pair" style="display: flex; gap: 4px; align-items: flex-end; height: 100%;">
+                  <div class="bar navy-bar" style="height: 75%; width: 14px; background: var(--primary-color); border-radius: 2px 2px 0 0;"></div>
+                  <div class="bar rose-bar" style="height: 52%; width: 14px; background: var(--accent-rose); border-radius: 2px 2px 0 0;"></div>
                 </div>
-                <span class="bar-label">Jul</span>
+                <span class="bar-label" style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">Jul</span>
               </div>
 
-              <div class="bar-col">
-                <div class="bars-pair">
-                  <div class="bar navy-bar" style="height: 80%;"></div>
-                  <div class="bar rose-bar" style="height: 55%;"></div>
+              <div class="bar-col" style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+                <div class="bars-pair" style="display: flex; gap: 4px; align-items: flex-end; height: 100%;">
+                  <div class="bar navy-bar" style="height: 80%; width: 14px; background: var(--primary-color); border-radius: 2px 2px 0 0;"></div>
+                  <div class="bar rose-bar" style="height: 55%; width: 14px; background: var(--accent-rose); border-radius: 2px 2px 0 0;"></div>
                 </div>
-                <span class="bar-label">Ags</span>
+                <span class="bar-label" style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">Ags</span>
               </div>
 
-              <div class="bar-col">
-                <div class="bars-pair">
-                  <div class="bar navy-bar" style="height: 95%;"></div>
-                  <div class="bar rose-bar" style="height: 65%;"></div>
+              <div class="bar-col" style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+                <div class="bars-pair" style="display: flex; gap: 4px; align-items: flex-end; height: 100%;">
+                  <div class="bar navy-bar" style="height: 95%; width: 14px; background: var(--primary-color); border-radius: 2px 2px 0 0;"></div>
+                  <div class="bar rose-bar" style="height: 65%; width: 14px; background: var(--accent-rose); border-radius: 2px 2px 0 0;"></div>
                 </div>
-                <span class="bar-label active">Sep '26</span>
+                <span class="bar-label active" style="font-size: 11px; font-weight: 700; color: var(--primary-color);">Sep '26</span>
               </div>
 
             </div>
           </div>
 
           <!-- INSIGHT BANNER FOOTER -->
-          <div class="insight-banner">
-            <i class="fa-solid fa-chart-line insight-icon"></i>
-            <p>
-              <strong>Insight Pembukuan:</strong> Surplus kas bulan ini meningkat sebesar +12.4% dibanding bulan lalu. Alokasi pengeluaran terbesar berfokus pada perbaikan sarana dan persiapan kas duka/sosial paguyuban.
+          <div class="insight-banner" style="background: #f8fafc; border-radius: 8px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-chart-line insight-icon" style="color: var(--primary-color); margin-top: 2px;"></i>
+            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+              <strong style="color: var(--text-primary);">Insight Pembukuan:</strong> Surplus kas meningkat stabil selama 4 bulan berturut-turut, didukung tingkat kepatuhan setoran warga sebesar <span style="color: #10b981; font-weight: 600;">94.5%</span> serta penghematan bahan konsumtif paguyuban.
             </p>
           </div>
         </div>
 
         <!-- RIGHT: DISTRIBUSI BEBAN & ALOKASI -->
-        <div class="card-box distribution-card">
-          <div class="card-header-flex">
+        <div class="card-box distribution-card" style="padding: 24px;">
+          <div class="card-header-flex" style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: flex-start;">
             <div>
               <h3 class="card-title">Distribusi Beban & Alokasi</h3>
-              <p class="card-desc">Penggunaan kas operasional bulan ini: <strong>Rp 31.420.000</strong></p>
+              <p class="card-desc" style="font-size: 11px;">September 2026 • Realisasi Rp 31.420.000</p>
             </div>
-            <span class="badge-anggaran">89.7% Anggaran</span>
+            <span class="badge-anggaran" style="background: #e0e7ff; color: var(--primary-color); font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 12px; text-align: center;">89.7%<br>Anggaran</span>
           </div>
 
-          <div class="beban-list">
+          <div class="beban-list" style="display: flex; flex-direction: column; gap: 24px;">
             
-            <div class="beban-item">
-              <div class="beban-icon-box">
+            <div class="beban-item" style="display: flex; gap: 12px;">
+              <div class="beban-icon-box" style="width: 32px; height: 32px; flex-shrink: 0; background: #e0e7ff; color: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
-              <div class="beban-content">
-                <div class="beban-title-row">
+              <div class="beban-content" style="flex: 1;">
+                <div class="beban-title-row" style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px;">
                   <strong class="beban-name">Keamanan & Pos Satpam 24 Jam</strong>
-                  <span class="beban-amount">Rp 15.000.000</span>
+                  <span class="beban-amount font-bold">Rp15.000.000</span>
                 </div>
-                <div class="progress-bar-bg margin-v-6">
-                  <div class="progress-bar-fill primary-fill" style="width: 47.7%;"></div>
+                <div class="progress-bar-bg margin-v-6" style="background: #e2e8f0; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                  <div class="progress-bar-fill primary-fill" style="width: 47.7%; background: var(--primary-color); height: 100%;"></div>
                 </div>
-                <div class="beban-sub-info">
-                  <span>Honor 4 Personil + Servis Barrier Gate RFID</span>
-                  <span class="font-bold">47.7%</span>
+                <div class="beban-sub-info" style="display: flex; justify-content: space-between; font-size: 10px; color: var(--text-secondary);">
+                  <span>Honor 4 Personil + Servis Boom Gate RFID</span>
+                  <span class="font-bold text-primary">47.7%</span>
                 </div>
               </div>
             </div>
 
-            <div class="beban-item">
-              <div class="beban-icon-box">
+            <div class="beban-item" style="display: flex; gap: 12px;">
+              <div class="beban-icon-box" style="width: 32px; height: 32px; flex-shrink: 0; background: #dcfce7; color: #166534; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                 <i class="fa-solid fa-trash-can"></i>
               </div>
-              <div class="beban-content">
-                <div class="beban-title-row">
+              <div class="beban-content" style="flex: 1;">
+                <div class="beban-title-row" style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px;">
                   <strong class="beban-name">Kebersihan & Angkut Sampah DLH</strong>
-                  <span class="beban-amount">Rp 7.500.000</span>
+                  <span class="beban-amount font-bold">Rp7.500.000</span>
                 </div>
-                <div class="progress-bar-bg margin-v-6">
-                  <div class="progress-bar-fill secondary-fill" style="width: 23.9%;"></div>
+                <div class="progress-bar-bg margin-v-6" style="background: #e2e8f0; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                  <div class="progress-bar-fill secondary-fill" style="width: 23.9%; background: #10b981; height: 100%;"></div>
                 </div>
-                <div class="beban-sub-info">
-                  <span>Retribusi armada mekar sampah 3x seminggu</span>
-                  <span class="font-bold">23.9%</span>
+                <div class="beban-sub-info" style="display: flex; justify-content: space-between; font-size: 10px; color: var(--text-secondary);">
+                  <span>Retribusi truk kontainer sampah 3x seminggu</span>
+                  <span class="font-bold text-primary">23.9%</span>
                 </div>
               </div>
             </div>
 
-            <div class="beban-item">
-              <div class="beban-icon-box">
+            <div class="beban-item" style="display: flex; gap: 12px;">
+              <div class="beban-icon-box" style="width: 32px; height: 32px; flex-shrink: 0; background: #f1f5f9; color: var(--secondary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                 <i class="fa-solid fa-users"></i>
               </div>
-              <div class="beban-content">
-                <div class="beban-title-row">
+              <div class="beban-content" style="flex: 1;">
+                <div class="beban-title-row" style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px;">
                   <strong class="beban-name">Kas Sosial & Rapat Warga</strong>
-                  <span class="beban-amount">Rp 3.790.000</span>
+                  <span class="beban-amount font-bold">Rp3.750.000</span>
                 </div>
-                <div class="progress-bar-bg margin-v-6">
-                  <div class="progress-bar-fill rose-fill" style="width: 12.1%;"></div>
+                <div class="progress-bar-bg margin-v-6" style="background: #e2e8f0; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                  <div class="progress-bar-fill rose-fill" style="width: 11.9%; background: var(--secondary-color); height: 100%;"></div>
                 </div>
-                <div class="beban-sub-info">
-                  <span>Santunan Duka/Sakit & konsumsi rapat/RT</span>
-                  <span class="font-bold">12.1%</span>
+                <div class="beban-sub-info" style="display: flex; justify-content: space-between; font-size: 10px; color: var(--text-secondary);">
+                  <span>Santunan kedukaan & logistik musyawarah RT</span>
+                  <span class="font-bold text-primary">11.9%</span>
                 </div>
               </div>
             </div>
@@ -337,110 +343,110 @@
       </section>
 
       <!-- MIDDLE SECTION 2: REKAPITULASI TARGET VS REALISASI -->
-      <section class="card-box section-margin-top">
-        <div class="card-header-flex">
+      <section class="card-box section-margin-top" style="padding: 24px; margin-bottom: 24px;">
+        <div class="card-header-flex" style="display: flex; justify-content: space-between; margin-bottom: 24px;">
           <div>
-            <h3 class="card-title">Rekapitulasi Target vs Realisasi Per Pos Iuran</h3>
-            <p class="card-desc">Evaluasi pencapaian tingkat kepatuhan kas iuran per nominal total 72 Kepala Keluarga</p>
+            <h3 class="card-title">Rekapitulasi Target vs Realisasi per Pos Iuran</h3>
+            <p class="card-desc" style="font-size: 11px;">Evaluasi pencapaian pungutan kas warga Klaster Gardenia (Total 150 Kepala Keluarga)</p>
           </div>
-          <span class="tag-verified-bendahara">
-            <i class="fa-solid fa-circle-check"></i> Terverifikasi Bendahara: <strong>94.6% (68/72 KK)</strong>
+          <span class="tag-verified-bendahara" style="background: #e0e7ff; color: var(--primary-color); font-size: 11px; padding: 6px 12px; border-radius: 16px; font-weight: 500;">
+            Terverifikasi Bendahara: <strong>144 KK (97.3%)</strong>
           </span>
         </div>
 
         <div class="table-responsive">
-          <table class="report-table">
+          <table class="report-table" style="width: 100%; border-collapse: collapse; text-align: left;">
             <thead>
-              <tr>
-                <th>Nama Pos Iuran</th>
-                <th>Sasaran KK</th>
-                <th>Target Nominal</th>
-                <th>Total Terkumpul</th>
-                <th>Tingkat Capaian</th>
-                <th>Sisa Tunggakan</th>
-                <th>Status Pos</th>
+              <tr style="border-bottom: 1px solid #e2e8f0; font-size: 11px; color: var(--text-secondary);">
+                <th style="padding: 12px 8px;">Nama Pos Iuran</th>
+                <th style="padding: 12px 8px;">Sasaran KK</th>
+                <th style="padding: 12px 8px;">Target Nominal</th>
+                <th style="padding: 12px 8px;">Total Terkumpul</th>
+                <th style="padding: 12px 8px; width: 180px;">Tingkat Capaian</th>
+                <th style="padding: 12px 8px;">Sisa Tunggakan</th>
+                <th style="padding: 12px 8px;">Status Pos</th>
               </tr>
             </thead>
             <tbody>
               
-              <tr>
-                <td>
-                  <div class="pos-title-cell">
-                    <span class="dot-pos dot-green"></span>
-                    <strong>Kebersihan & Sampah Lingkungan</strong>
+              <tr style="border-bottom: 1px solid #f1f5f9; font-size: 12px;">
+                <td style="padding: 16px 8px;">
+                  <div class="pos-title-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="dot-pos dot-green" style="width: 6px; height: 16px; background: #10b981; border-radius: 3px;"></span>
+                    <strong style="max-width: 150px;">Kebersihan & Sampah Lingkungan</strong>
                   </div>
                 </td>
-                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
-                <td>Rp 3.600.000</td>
-                <td><strong>Rp 3.600.000</strong></td>
-                <td>
-                  <div class="capaian-cell">
-                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill success" style="width: 100%;"></div></div>
-                    <span>100% (72 KK)</span>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">150 KK (Rp<br>50rb/KK)</td>
+                <td style="padding: 16px 8px; font-weight: 600;">Rp<br>7.500.000</td>
+                <td style="padding: 16px 8px; font-weight: 700;">Rp<br>7.500.000</td>
+                <td style="padding: 16px 8px;">
+                  <div class="capaian-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <div class="progress-bar-bg" style="width: 60px; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden;"><div class="progress-bar-fill success" style="width: 100%; height: 100%; background: #10b981;"></div></div>
+                    <span style="color: #10b981; font-weight: 600; font-size: 10px;">100% (150<br>KK)</span>
                   </div>
                 </td>
-                <td><strong class="text-green">Rp 0</strong></td>
-                <td><span class="badge-status-pill green">Lunas Terkumpul</span></td>
+                <td style="padding: 16px 8px;"><strong style="color: #10b981;">Rp 0</strong></td>
+                <td style="padding: 16px 8px;"><span class="badge-status-pill green" style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600; display: inline-block; text-align: center;">100%<br>Tercapai</span></td>
               </tr>
 
-              <tr>
-                <td>
-                  <div class="pos-title-cell">
-                    <span class="dot-pos dot-navy"></span>
-                    <strong>Keamanan, Sekuriti & Barrier RFID</strong>
+              <tr style="border-bottom: 1px solid #f1f5f9; font-size: 12px;">
+                <td style="padding: 16px 8px;">
+                  <div class="pos-title-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="dot-pos dot-navy" style="width: 6px; height: 16px; background: var(--primary-color); border-radius: 3px;"></span>
+                    <strong style="max-width: 150px;">Keamanan, Sekuriti & Barrier RFID</strong>
                   </div>
                 </td>
-                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
-                <td>Rp 15.000.000</td>
-                <td><strong>Rp 14.400.000</strong></td>
-                <td>
-                  <div class="capaian-cell">
-                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill primary-fill" style="width: 96%;"></div></div>
-                    <span>96% (69 KK)</span>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">150 KK (Rp<br>100rb/KK)</td>
+                <td style="padding: 16px 8px; font-weight: 600;">Rp<br>15.000.000</td>
+                <td style="padding: 16px 8px; font-weight: 700;">Rp<br>14.400.000</td>
+                <td style="padding: 16px 8px;">
+                  <div class="capaian-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <div class="progress-bar-bg" style="width: 60px; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden;"><div class="progress-bar-fill primary-fill" style="width: 96%; height: 100%; background: var(--primary-color);"></div></div>
+                    <span style="color: var(--primary-color); font-weight: 600; font-size: 10px;">96% (144<br>KK)</span>
                   </div>
                 </td>
-                <td><strong class="text-danger">Rp 600.000 <small>(3 KK)</small></strong></td>
-                <td><span class="badge-status-pill blue">Beda Tipis</span></td>
+                <td style="padding: 16px 8px;"><strong style="color: #dc2626;">Rp 600.000<br><small style="font-size: 10px;">(6 KK)</small></strong></td>
+                <td style="padding: 16px 8px;"><span class="badge-status-pill blue" style="background: #e0e7ff; color: var(--primary-color); padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600; display: inline-block; text-align: center;">96%<br>Berjalan</span></td>
               </tr>
 
-              <tr>
-                <td>
-                  <div class="pos-title-cell">
-                    <span class="dot-pos dot-purple"></span>
-                    <strong>Kas Paguyuban & Kesejahteraan Sosial</strong>
+              <tr style="border-bottom: 1px solid #f1f5f9; font-size: 12px;">
+                <td style="padding: 16px 8px;">
+                  <div class="pos-title-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="dot-pos dot-purple" style="width: 6px; height: 16px; background: var(--secondary-color); border-radius: 3px;"></span>
+                    <strong style="max-width: 150px;">Kas Paguyuban & Kesejahteraan Sosial</strong>
                   </div>
                 </td>
-                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
-                <td>Rp 3.750.000</td>
-                <td><strong>Rp 3.550.000</strong></td>
-                <td>
-                  <div class="capaian-cell">
-                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill secondary-fill" style="width: 94.6%;"></div></div>
-                    <span>94.6% (68 KK)</span>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">150 KK (Rp<br>25rb/KK)</td>
+                <td style="padding: 16px 8px; font-weight: 600;">Rp<br>3.750.000</td>
+                <td style="padding: 16px 8px; font-weight: 700;">Rp<br>3.550.000</td>
+                <td style="padding: 16px 8px;">
+                  <div class="capaian-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <div class="progress-bar-bg" style="width: 60px; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden;"><div class="progress-bar-fill secondary-fill" style="width: 94.6%; height: 100%; background: var(--secondary-color);"></div></div>
+                    <span style="color: var(--secondary-color); font-weight: 600; font-size: 10px;">94.6% (142<br>KK)</span>
                   </div>
                 </td>
-                <td><strong class="text-danger">Rp 200.000 <small>(4 KK)</small></strong></td>
-                <td><span class="badge-status-pill purple">94.6% Lunas</span></td>
+                <td style="padding: 16px 8px;"><strong style="color: #dc2626;">Rp 200.000<br><small style="font-size: 10px;">(8 KK)</small></strong></td>
+                <td style="padding: 16px 8px;"><span class="badge-status-pill purple" style="background: #ede9fe; color: var(--secondary-color); padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600; display: inline-block; text-align: center;">94.6%<br>Tertib</span></td>
               </tr>
 
-              <tr>
-                <td>
-                  <div class="pos-title-cell">
-                    <span class="dot-pos dot-rose"></span>
-                    <strong>Iuran Insidental Perbaikan Paving Lapangan</strong>
+              <tr style="border-bottom: 1px solid #f1f5f9; font-size: 12px;">
+                <td style="padding: 16px 8px;">
+                  <div class="pos-title-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="dot-pos dot-rose" style="width: 6px; height: 16px; background: #fca5a5; border-radius: 3px;"></span>
+                    <strong style="max-width: 150px;">Iuran Insidental Kerapihan Paving Lapangan</strong>
                   </div>
                 </td>
-                <td>100% KK<br><small class="text-gray">(72/72 KK)</small></td>
-                <td>Rp 3.600.000</td>
-                <td><strong>Rp 3.000.000</strong></td>
-                <td>
-                  <div class="capaian-cell">
-                    <div class="progress-bar-bg width-80"><div class="progress-bar-fill rose-fill" style="width: 83%;"></div></div>
-                    <span>83% (60 KK)</span>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">150 KK (Rp<br>75rb/KK)</td>
+                <td style="padding: 16px 8px; font-weight: 600;">Rp<br>11.250.000</td>
+                <td style="padding: 16px 8px; font-weight: 700;">Rp<br>9.450.000</td>
+                <td style="padding: 16px 8px;">
+                  <div class="capaian-cell" style="display: flex; align-items: center; gap: 8px;">
+                    <div class="progress-bar-bg" style="width: 60px; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden;"><div class="progress-bar-fill rose-fill" style="width: 84%; height: 100%; background: #c084fc;"></div></div>
+                    <span style="color: #c084fc; font-weight: 600; font-size: 10px;">84% (126<br>KK)</span>
                   </div>
                 </td>
-                <td><strong class="text-danger">Rp 600.000 <small>(12 KK)</small></strong></td>
-                <td><span class="badge-status-pill orange">Dalam Realisasi</span></td>
+                <td style="padding: 16px 8px;"><strong style="color: #dc2626;">Rp 1.800.000<br><small style="font-size: 10px;">(24 KK)</small></strong></td>
+                <td style="padding: 16px 8px;"><span class="badge-status-pill orange" style="background: #ffedd5; color: #9a3412; padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600; display: inline-block; text-align: center;">84%<br>Insidental</span></td>
               </tr>
 
             </tbody>
@@ -449,107 +455,84 @@
       </section>
 
       <!-- BOTTOM SECTION: LOG TRANSAKSI KAS & MUTASI TERKINI -->
-      <section class="card-box section-margin-top">
-        <div class="card-header-flex">
+      <section class="card-box section-margin-top" style="padding: 24px; margin-bottom: 24px;">
+        <div class="card-header-flex" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
           <div>
             <h3 class="card-title">Log Transaksi Kas & Mutasi Terkini</h3>
-            <p class="card-desc">Arus pencatatan kas masuk dan keluar secara rinci beserta bukti fisik operasional</p>
+            <p class="card-desc" style="font-size: 11px;">Arus pembukuan kas masuk dari portal iuran dan nota pengeluaran operasional</p>
           </div>
 
-          <div class="tab-buttons">
-            <button class="tab-btn active">Semua Mutasi</button>
-            <button class="tab-btn">Uang Masuk / Iuran</button>
-            <button class="tab-btn">Uang Keluar / Beban</button>
+          <div class="tab-buttons" style="display: flex; gap: 8px;">
+            <button class="tab-btn" style="background: #e0e7ff; color: var(--primary-color); border: none; border-radius: 6px; padding: 6px 16px; font-size: 11px; font-weight: 500;">Semua Mutasi</button>
+            <button class="tab-btn" style="background: #e0e7ff; color: var(--primary-color); border: none; border-radius: 6px; padding: 6px 16px; font-size: 11px; font-weight: 500;">Uang Masuk / Iuran</button>
+            <button class="tab-btn active" style="background: var(--primary-color); color: white; border: none; border-radius: 6px; padding: 6px 16px; font-size: 11px; font-weight: 600;">Uang Keluar / Beban</button>
           </div>
         </div>
 
         <div class="table-responsive">
-          <table class="report-table log-table">
+          <table class="report-table log-table" style="width: 100%; border-collapse: collapse; text-align: left;">
             <thead>
-              <tr>
-                <th>Tanggal Transaksi</th>
-                <th>Kategori & Uraian</th>
-                <th>Rekening / Kas</th>
-                <th>Nominal (Rp)</th>
-                <th>Status Verifikasi</th>
-                <th>Bukti / Struk</th>
+              <tr style="border-bottom: 1px solid #e2e8f0; font-size: 11px; color: var(--text-secondary);">
+                <th style="padding: 12px 8px;">No. Bukti / Kuitansi</th>
+                <th style="padding: 12px 8px;">Tanggal Transaksi</th>
+                <th style="padding: 12px 8px;">Kategori & Uraian</th>
+                <th style="padding: 12px 8px;">Rekening Kas</th>
+                <th style="padding: 12px 8px;">Nominal (Rp)</th>
+                <th style="padding: 12px 8px; text-align: center;">Status Verifikasi</th>
+                <th style="padding: 12px 8px; text-align: center;">Bukti / Slip</th>
               </tr>
             </thead>
             <tbody>
               
-              <tr>
-                <td>
-                  <span class="date-main">25 Sep 2026</span>
-                  <span class="time-sub">09:15 WIB</span>
+              <tr style="border-bottom: 1px solid #f1f5f9; font-size: 12px;">
+                <td style="padding: 16px 8px; font-weight: 600; color: var(--text-primary);">
+                  KWT/2026/09/OUT-842
                 </td>
-                <td>
-                  <strong class="log-title">Honor Gaji 2 Personil Satpam Shift Pagi & Malam</strong>
-                  <span class="log-sub">Pos: Keamanan & Lingkungan</span>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">
+                  <span class="date-main" style="display: block;">25 Sep 2026, 09:15</span>
                 </td>
-                <td><span class="bank-pill">BCA Rekening Kas RT</span></td>
-                <td><strong class="text-danger-amount">-Rp 4.000.000</strong></td>
-                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
-                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+                <td style="padding: 16px 8px;">
+                  <strong class="log-title" style="display: block; color: var(--text-primary);">Honor Gaji 4 Petugas Satpam Shift Pagi & Malam</strong>
+                  <span class="log-sub" style="font-size: 10px; color: var(--text-secondary);">Pos: Keamanan Lingkungan</span>
+                </td>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">BCA Rekening Kas RT</td>
+                <td style="padding: 16px 8px;"><strong class="text-danger-amount" style="color: #dc2626;">- Rp 12.000.000</strong></td>
+                <td style="padding: 16px 8px; text-align: center;"><span class="status-verify-tag green" style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-circle-check" style="font-size: 12px;"></i> Sah (Biro Fin)</span></td>
+                <td style="padding: 16px 8px; text-align: center;"><i class="fa-solid fa-file-invoice" style="color: #94a3b8; font-size: 16px;"></i></td>
               </tr>
 
-              <tr>
-                <td>
-                  <span class="date-main">24 Sep 2026</span>
-                  <span class="time-sub">14:40 WIB</span>
+              <tr style="border-bottom: 1px solid #f1f5f9; font-size: 12px;">
+                <td style="padding: 16px 8px; font-weight: 600; color: var(--text-primary);">
+                  KWT/2026/09/OUT-841
                 </td>
-                <td>
-                  <strong class="log-title">Setoran Pembayaran QRIS Warga (Blok A1-A10)</strong>
-                  <span class="log-sub">Pos: Iuran Wajib Bulanan Sampah + Keamanan</span>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">
+                  <span class="date-main" style="display: block;">22 Sep 2026, 14:10</span>
                 </td>
-                <td><span class="bank-pill">QRIS Auto-Settlement</span></td>
-                <td><strong class="text-success-amount">+Rp 1.150.000</strong></td>
-                <td><span class="status-verify-tag green"><i class="fa-solid fa-bolt"></i> Otomatis</span></td>
-                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+                <td style="padding: 16px 8px;">
+                  <strong class="log-title" style="display: block; color: var(--text-primary);">Penggantian 6 Unit Lampu LED Sorot PJU Blok B3</strong>
+                  <span class="log-sub" style="font-size: 10px; color: var(--text-secondary);">Pos: Listrik & Fasilitas Umum</span>
+                </td>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">Petty Cash Tunai RT</td>
+                <td style="padding: 16px 8px;"><strong class="text-danger-amount" style="color: #dc2626;">- Rp 1.150.000</strong></td>
+                <td style="padding: 16px 8px; text-align: center;"><span class="status-verify-tag green" style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-circle-check" style="font-size: 12px;"></i> Sah (Biro Fin)</span></td>
+                <td style="padding: 16px 8px; text-align: center;"><i class="fa-solid fa-file-invoice" style="color: #94a3b8; font-size: 16px;"></i></td>
               </tr>
 
-              <tr>
-                <td>
-                  <span class="date-main">22 Sep 2026</span>
-                  <span class="time-sub">11:10 WIB</span>
+              <tr style="border-bottom: 1px solid #f1f5f9; font-size: 12px;">
+                <td style="padding: 16px 8px; font-weight: 600; color: var(--text-primary);">
+                  KWT/2026/09/OUT-840
                 </td>
-                <td>
-                  <strong class="log-title">Penggantian Lampu LED Sorot PJU Blok B2</strong>
-                  <span class="log-sub">Pos: Sarana & Fasilitas Umum</span>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">
+                  <span class="date-main" style="display: block;">18 Sep 2026, 10:30</span>
                 </td>
-                <td><span class="bank-pill">Petty Cash Tunai RT</span></td>
-                <td><strong class="text-danger-amount">-Rp 150.000</strong></td>
-                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
-                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <span class="date-main">20 Sep 2026</span>
-                  <span class="time-sub">16:00 WIB</span>
+                <td style="padding: 16px 8px;">
+                  <strong class="log-title" style="display: block; color: var(--text-primary);">Pembayaran Termin 1 Kontrak Truk Sampah DLH</strong>
+                  <span class="log-sub" style="font-size: 10px; color: var(--text-secondary);">Pos: Kebersihan Lingkungan</span>
                 </td>
-                <td>
-                  <strong class="log-title">Dana Hibah/Donasi Warga (Kavling B-08)</strong>
-                  <span class="log-sub">Pos: Perbaikan Taman Serbaguna & Paving</span>
-                </td>
-                <td><span class="bank-pill">Bank Rekening Kas RT</span></td>
-                <td><strong class="text-success-amount">+Rp 2.500.000</strong></td>
-                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
-                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <span class="date-main">18 Sep 2026</span>
-                  <span class="time-sub">10:30 WIB</span>
-                </td>
-                <td>
-                  <strong class="log-title">Pembayaran Retribusi Kontainer Sampah DLH</strong>
-                  <span class="log-sub">Pos: Kebersihan Lingkungan</span>
-                </td>
-                <td><span class="bank-pill">BCA Rekening Kas RT</span></td>
-                <td><strong class="text-danger-amount">-Rp 2.750.000</strong></td>
-                <td><span class="status-verify-tag green"><i class="fa-solid fa-check"></i> Sah / Valid</span></td>
-                <td><button class="btn-icon-receipt" title="Lihat Bukti"><i class="fa-regular fa-file-lines"></i></button></td>
+                <td style="padding: 16px 8px; color: var(--text-secondary);">BCA Rekening Kas RT</td>
+                <td style="padding: 16px 8px;"><strong class="text-danger-amount" style="color: #dc2626;">- Rp 3.750.000</strong></td>
+                <td style="padding: 16px 8px; text-align: center;"><span class="status-verify-tag green" style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-circle-check" style="font-size: 12px;"></i> Sah (Biro Fin)</span></td>
+                <td style="padding: 16px 8px; text-align: center;"><i class="fa-solid fa-file-invoice" style="color: #94a3b8; font-size: 16px;"></i></td>
               </tr>
 
             </tbody>
@@ -557,256 +540,47 @@
         </div>
       </section>
 
-    </main>
-
-  </div>
-
-  <!-- MODAL POPUP CATAT ALOKASI & KAS KELUAR -->
-  <div id="modalCatatAlokasi" class="modal-overlay">
-    <div class="modal-container">
-      
-      <!-- MODAL HEADER -->
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div class="modal-icon-box">
-            <i class="fa-solid fa-wallet"></i>
-          </div>
+      <!-- NEW SECTION: LAMPIRAN DOKUMENTASI -->
+      <section class="card-box section-margin-top" style="padding: 24px; margin-bottom: 24px;">
+        <div class="card-header-flex" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <div>
-            <div class="modal-title-row">
-              <h2>Catat Alokasi & Kas Keluar</h2>
-              <span class="modal-badge-sub">Buku Kas RT 04 • September 2026</span>
-            </div>
-            <p class="modal-desc">
-              Pencatatan mutasi kas paguyuban, bukti nota kuitansi, dan alokasi anggaran operasional klaster.
-            </p>
+            <h3 class="card-title">Lampiran Dokumentasi Realisasi Lapangan</h3>
+            <p class="card-desc" style="font-size: 11px;">Verifikasi visual fisik pekerjaan perbaikan, seragam satpam, dan kegiatan warga klaster</p>
           </div>
-        </div>
-        <button type="button" id="closeModalBtn" class="btn-close-modal">&times;</button>
-      </div>
-
-      <!-- MODAL BODY (SCROLLABLE) -->
-      <div class="modal-body">
-        
-        <!-- BAGIAN A -->
-        <div class="modal-section">
-          <div class="section-title-bar">
-            <span class="section-badge-title">• BAGIAN A • INFORMASI BUKTI & WAKTU TRANSAKSI</span>
-            <span class="sync-id">ID Sinkron: #LOG-2609</span>
-          </div>
-
-          <div class="form-row-3col">
-            <div class="form-group-modal">
-              <div class="label-with-badge">
-                <label>Nomor Bukti / Kuitansi</label>
-                <span class="badge-auto">Otomatis</span>
-              </div>
-              <div class="input-read-only"># KWT/2026/09/OUT-843</div>
-            </div>
-
-            <div class="form-group-modal">
-              <label>Tanggal Transaksi</label>
-              <div class="input-icon-box">
-                <i class="fa-regular fa-calendar"></i>
-                <input type="text" value="26 September 2026">
-              </div>
-            </div>
-
-            <div class="form-group-modal">
-              <label>Waktu</label>
-              <div class="input-icon-box">
-                <i class="fa-regular fa-clock"></i>
-                <input type="text" value="10:30 WIB">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group-modal margin-top-12">
-            <label>Jenis Alokasi Pengeluaran</label>
-            <div class="toggle-btn-group">
-              <button type="button" class="btn-toggle-tab active">
-                <i class="fa-solid fa-receipt"></i> Pengeluaran / Beban Operasional
-              </button>
-              <button type="button" class="btn-toggle-tab">
-                <i class="fa-regular fa-clock"></i> Alokasi Dana Khusus / Cadangan
-              </button>
-            </div>
-          </div>
+          <span style="font-size: 11px; color: var(--text-secondary); font-weight: 500;">3 Bukti Terlampir</span>
         </div>
 
-        <!-- BAGIAN B -->
-        <div class="modal-section">
-          <div class="section-title-bar">
-            <span class="section-badge-title">• BAGIAN B • POS ANGGARAN & NOMINAL REALISASI</span>
-            <span class="plafon-badge-green"><i class="fa-solid fa-circle-check"></i> Sisa Plafon Pos: Rp 7.550.000 (Aman)</span>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div style="display: flex; flex-direction: column;">
+            <div style="height: 140px; background-color: #e2e8f0; border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+              <!-- Placeholder for image 1 -->
+              <div style="width: 100%; height: 100%; background: #94a3b8; display: flex; align-items: center; justify-content: center; color: white;"><i class="fa-solid fa-image"></i></div>
+            </div>
+            <strong style="font-size: 12px; color: var(--text-primary); margin-bottom: 2px;">Piket Keamanan & Gerbang RFID</strong>
+            <span style="font-size: 10px; color: var(--text-secondary);">Pos Satpam Utama Gardenia • 24 Sep 2026</span>
           </div>
 
-          <div class="form-row-2col-custom">
-            <div class="form-group-modal">
-              <label>Kategori & Pos Anggaran Klaster</label>
-              <div class="select-box-modal">
-                <i class="fa-solid fa-faucet-drip"></i>
-                <select>
-                  <option selected>Listrik PJU & Pompa Air Fasum</option>
-                </select>
-              </div>
+          <div style="display: flex; flex-direction: column;">
+            <div style="height: 140px; background-color: #e2e8f0; border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+              <!-- Placeholder for image 2 -->
+              <div style="width: 100%; height: 100%; background: #94a3b8; display: flex; align-items: center; justify-content: center; color: white;"><i class="fa-solid fa-image"></i></div>
             </div>
-
-            <div class="form-group-modal">
-              <div class="label-with-badge">
-                <label>Nominal Kas Keluar</label>
-                <span class="currency-label">Rupiah (IDR)</span>
-              </div>
-              <div class="nominal-input-box">
-                <i class="fa-solid fa-money-bill-wave"></i>
-                <input type="text" value="Rp 1.250.000">
-              </div>
-            </div>
+            <strong style="font-size: 12px; color: var(--text-primary); margin-bottom: 2px;">Pemasangan Lampu LED PJU Blok B</strong>
+            <span style="font-size: 10px; color: var(--text-secondary);">Jalan Boulevard B3 • 22 Sep 2026</span>
           </div>
 
-          <div class="quick-add-row">
-            <span class="quick-label">Tambah Cepat:</span>
-            <button type="button" class="btn-quick">+ Rp 100 rb</button>
-            <button type="button" class="btn-quick">+ Rp 500 rb</button>
-            <button type="button" class="btn-quick">+ Rp 1 jt</button>
-            <button type="button" class="btn-quick">+ Rp 5 jt</button>
+          <div style="display: flex; flex-direction: column;">
+            <div style="height: 140px; background-color: #e2e8f0; border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+              <!-- Placeholder for image 3 -->
+              <div style="width: 100%; height: 100%; background: #94a3b8; display: flex; align-items: center; justify-content: center; color: white;"><i class="fa-solid fa-image"></i></div>
+            </div>
+            <strong style="font-size: 12px; color: var(--text-primary); margin-bottom: 2px;">Perbaikan Paving & Saluran Air Got</strong>
+            <span style="font-size: 10px; color: var(--text-secondary);">Taman Lingkungan Sentral • 19 Sep 2026</span>
           </div>
         </div>
+      </section>
 
-        <!-- BAGIAN C -->
-        <div class="modal-section">
-          <div class="section-title-bar">
-            <span class="section-badge-title">• BAGIAN C • SUMBER DANA KAS & VERIFIKASI</span>
-          </div>
-
-          <label class="section-sub-label">Pilih Rekening Sumber Kas</label>
-          <div class="rekening-cards-grid">
-            
-            <label class="rekening-card active">
-              <div class="rekening-header">
-                <i class="fa-solid fa-building-columns icon-bank"></i>
-                <input type="radio" name="rekening" checked>
-              </div>
-              <strong>BCA Kas RT</strong>
-              <span class="rek-num">827-019-4821</span>
-              <span class="rek-saldo green">Saldo: Rp 46.470.000</span>
-            </label>
-
-            <label class="rekening-card">
-              <div class="rekening-header">
-                <i class="fa-solid fa-wallet icon-bank"></i>
-                <input type="radio" name="rekening">
-              </div>
-              <strong>Kas Kecil Tunai</strong>
-              <span class="rek-num">Petty Cash RT 04</span>
-              <span class="rek-saldo green">Saldo: Rp 2.450.000</span>
-            </label>
-
-            <label class="rekening-card">
-              <div class="rekening-header">
-                <i class="fa-solid fa-qrcode icon-bank"></i>
-                <input type="radio" name="rekening">
-              </div>
-              <strong>QRIS Settlement</strong>
-              <span class="rek-num">Penampungan Iuran</span>
-              <span class="rek-saldo green">Saldo: Rp 8.120.000</span>
-            </label>
-
-          </div>
-
-          <div class="form-row-2col margin-top-12">
-            <div class="form-group-modal">
-              <label>Pihak Penerima Dana / Vendor / Teknisi</label>
-              <div class="input-icon-box">
-                <i class="fa-solid fa-store"></i>
-                <input type="text" value="Toko Listrik Sinar Terang / Bpk. Slamet">
-              </div>
-            </div>
-
-            <div class="form-group-modal">
-              <label>Status Otorisasi Dokumen</label>
-              <div class="radio-status-group">
-                <label class="radio-status-pill active">
-                  <input type="radio" name="otorisasi" checked>
-                  <span class="green-dot-pill"></span> Sah (Biro Keuangan)
-                </label>
-                <label class="radio-status-pill">
-                  <input type="radio" name="otorisasi">
-                  Menunggu Pak RT
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- BAGIAN D -->
-        <div class="modal-section">
-          <div class="section-title-bar">
-            <span class="section-badge-title">• BAGIAN D • URAIAN KEPERLUAN & LAMPIRAN BUKTI</span>
-          </div>
-
-          <div class="form-group-modal">
-            <label>Uraian Keterangan & Rincian Pengeluaran</label>
-            <textarea class="modal-textarea" rows="3">Pembelian 2 unit lampu sorot LED 100W pengganti PJU Blok B yang korsleting, kabel instalasi 30m, serta honor teknisi kelistrikan.</textarea>
-          </div>
-
-          <div class="form-group-modal margin-top-12">
-            <div class="label-with-badge">
-              <label>Lampiran Bukti Kuitansi / Slip Transfer</label>
-              <span class="max-size-info">Maksimal 5MB (JPG, PNG, PDF)</span>
-            </div>
-            <div class="upload-dropzone">
-              <i class="fa-solid fa-receipt upload-icon"></i>
-              <span class="upload-text">Bukti Penggunaan Dana</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- MODAL FOOTER -->
-      <div class="modal-footer">
-        <button type="button" id="cancelModalBtn" class="btn-modal-cancel">
-          <i class="fa-solid fa-circle-xmark"></i> Batal
-        </button>
-        <button type="button" class="btn-modal-submit">
-          <i class="fa-solid fa-plus"></i> Simpan dan Tambahkan Mutasi
-        </button>
-      </div>
-
-    </div>
+    </main>
   </div>
-
-  <!-- SCRIPT KONTROL MODAL POPUP -->
-  <script>
-    const openModalBtn = document.getElementById('openModalCatatAlokasi');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const cancelModalBtn = document.getElementById('cancelModalBtn');
-    const modal = document.getElementById('modalCatatAlokasi');
-
-    if (openModalBtn && modal) {
-      openModalBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    }
-
-    function closeModal() {
-      if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    }
-
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-    if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
-
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal();
-        }
-      });
-    }
-  </script>
 </body>
 </html>

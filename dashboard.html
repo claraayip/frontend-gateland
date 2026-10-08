@@ -18,7 +18,7 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="brand-logo">
-          <i class="fa-solid fa-building-user logo-icon"></i>
+          <img src="assets/logo gateland.png" alt="GateLand Logo" style="height: 32px; width: auto;">
           <span class="brand-name">GateLand</span>
         </div>
       </div>
@@ -61,19 +61,23 @@
 
       <!-- User Profile Sidebar Bottom -->
       <div class="user-sidebar-card">
-        <div class="user-avatar-circle">
-          <i class="fa-solid fa-user"></i>
+        <div class="user-info-top">
+          <div class="user-avatar-circle">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Bpk. Bambang P.</span>
+            <span class="user-role">Ketua RT 04 / RW 08</span>
+          </div>
         </div>
-        <div class="user-info">
-          <span class="user-name">Andi Putra Wijaya</span>
-          <span class="user-role">Pengelola</span>
+        <div class="user-info-bottom">
           <div class="user-status">
             <span class="status-dot"></span> Online
           </div>
+          <a href="index.html" class="btn-logout" title="Keluar">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+          </a>
         </div>
-        <a href="index.html" class="btn-logout" title="Keluar">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
-        </a>
       </div>
     </aside>
 
@@ -88,12 +92,9 @@
         </div>
 
         <div class="topbar-actions">
-          <button class="btn-announcement">
-            <!-- UBAH BAGIAN INI DI dashboard.html -->
-            <a href="buatpengumuman.html" class="btn-announcement">
-              <i class="fa-solid fa-bullhorn"></i> + Buat Pengumuman
-            </a>
-          </button>
+          <a href="buatpengumuman.html" class="btn-announcement">
+            <i class="fa-solid fa-bullhorn"></i> + Buat Pengumuman
+          </a>
 
           <div class="admin-badge">
             <span class="admin-text">Admin Aktif</span>
@@ -105,6 +106,7 @@
 
       <!-- DASHBOARD BODY CONTENT -->
       <div class="dashboard-body">
+        <div id="dashboard-overview">
 
         <!-- HERO BANNER -->
         <section class="hero-banner">
@@ -125,7 +127,7 @@
             <div class="stat-header">
               <div>
                 <span class="stat-label">TOTAL IURAN TERKUMPUL</span>
-                <h2 class="stat-value">Rp 7.350.000</h2>
+                <h2 class="stat-value">Rp7.350.000</h2>
               </div>
               <div class="stat-icon-box primary-bg">
                 <i class="fa-solid fa-wallet"></i>
@@ -139,7 +141,7 @@
             </div>
             <div class="stat-footer">
               <span class="badge-growth">+12.4% bln lalu</span>
-              <span class="stat-subtext">Sisa Rp 2.150.000</span>
+              <span class="stat-subtext">Sisa Rp2.150.000</span>
             </div>
           </div>
 
@@ -178,7 +180,7 @@
             </div>
             <div class="stat-footer-right">
               <span class="stat-subtext">Total Nilai Tagihan</span>
-              <span class="alert-amount">Rp 175.000</span>
+              <span class="alert-amount">Rp875.000</span>
             </div>
           </div>
 
@@ -195,7 +197,7 @@
                 <p class="card-desc">Konfirmasi bukti transfer masuk dari warga sebelum kuitansi digital diterbitkan</p>
               </div>
               <div class="tab-buttons">
-                <button class="tab-btn active">Perlu Tindakan <span class="badge-count">4</span></button>
+                <button class="tab-btn active" onclick="toggleDetailedView()">Perlu Tindakan <span class="badge-count-red">8</span></button>
                 <button class="tab-btn">Semua (150)</button>
                 <button class="tab-btn">Lunas</button>
                 <button class="tab-btn">Tunggakan</button>
@@ -309,17 +311,6 @@
 
               <div class="timeline-item">
                 <div class="timeline-icon icon-purple">
-                  <i class="fa-solid fa-user-plus"></i>
-                </div>
-                <div class="timeline-content">
-                  <strong>Warga Baru Terdaftar</strong>
-                  <p>Bpk. Dimas Pratama (Blok D1/02) telah mengaktifkan akun mobile.</p>
-                  <span class="timeline-meta">09:15 WIB • Mandiri</span>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-icon icon-blue">
                   <i class="fa-solid fa-bullhorn"></i>
                 </div>
                 <div class="timeline-content">
@@ -357,9 +348,9 @@
                 <div>
                   <h4 class="budget-name">Keamanan & Satpam Pos</h4>
                 </div>
-                <span class="portion-badge">45% Porsi</span>
+                <span class="portion-badge" style="color: var(--primary-color);">45% Porsi</span>
               </div>
-              <h3 class="budget-amount">Rp7.000.000</h3>
+              <h3 class="budget-amount" style="color: var(--primary-color);">Rp7.000.000</h3>
               <p class="budget-desc">Honor 2 personel, shift siang & malam</p>
               <span class="status-pill green-pill">Terbayar Terjadwal (Tgl 25)</span>
             </div>
@@ -370,9 +361,9 @@
                 <div>
                   <h4 class="budget-name">Kebersihan & Angkut Sampah</h4>
                 </div>
-                <span class="portion-badge">35% Porsi</span>
+                <span class="portion-badge" style="color: var(--secondary-color);">35% Porsi</span>
               </div>
-              <h3 class="budget-amount">Rp6.000.000</h3>
+              <h3 class="budget-amount" style="color: var(--secondary-color);">Rp6.000.000</h3>
               <p class="budget-desc">Retribusi armada sampah 3× seminggu & taman RT</p>
               <span class="status-pill purple-pill">Tercukupi Penuh</span>
             </div>
@@ -383,9 +374,9 @@
                 <div>
                   <h4 class="budget-name">Dana Sosial & Perawatan</h4>
                 </div>
-                <span class="portion-badge">20% Porsi</span>
+                <span class="portion-badge" style="color: var(--text-secondary);">20% Porsi</span>
               </div>
-              <h3 class="budget-amount">Rp 2.000.000</h3>
+              <h3 class="budget-amount" style="color: var(--text-primary);">Rp 2.000.000</h3>
               <p class="budget-desc">Lampu jalan, santunan warga, kas cadangan</p>
               <span class="status-pill rose-pill">Masuk Kas Abadi</span>
             </div>
@@ -393,10 +384,272 @@
           </div>
         </section>
 
+        </div> <!-- END dashboard-overview -->
+
+        <!-- DASHBOARD DETAILED VERIFIKASI -->
+        <div id="dashboard-detailed" style="display: none;">
+          <div class="card-box verifikasi-box-full">
+            <div class="card-header-flex align-items-center">
+              <div class="header-left">
+                <div class="header-icon-box">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                  <h3 class="card-title">Verifikasi Pembayaran Iuran</h3>
+                  <p class="card-desc">Konfirmasi bukti transfer masuk dari warga sebelum kwitansi digital diterbitkan</p>
+                </div>
+              </div>
+              <div class="tab-buttons">
+                <button class="tab-btn active" onclick="toggleDetailedView()">Perlu Tindakan <span class="badge-count-red">8</span></button>
+                <button class="tab-btn">Semua (150)</button>
+                <button class="tab-btn">Lunas</button>
+                <button class="tab-btn">Tunggakan</button>
+              </div>
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>PENGHUNI & UNIT</th>
+                    <th>POS IURAN</th>
+                    <th>NOMINAL</th>
+                    <th>KANAL & BUKTI</th>
+                    <th>WAKTU MASUK</th>
+                    <th>AKSI VALIDASI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1 -->
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-pastel-blue">G</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Ghaida</strong>
+                          <span class="user-sub">Blok B4 / No. 12</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue text-center pos-multi-line">Iuran Kebersihan<br>dan Keamanan</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 175.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-building-columns"></i> BCA Transfer <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                    <td>
+                      <span class="text-secondary" style="font-size: 12px;">10 menit lalu</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn-setujui"><i class="fa-solid fa-check"></i> Setujui</button>
+                        <button class="btn-tolak"><i class="fa-solid fa-xmark"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <!-- Row 2 -->
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-pastel-blue">AN</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Alisha Nayara</strong>
+                          <span class="user-sub">Blok A2 / No. 05</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue">Iuran Rutin</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 200.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-building-columns"></i> BRI Transfer <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                    <td>
+                      <span class="text-secondary" style="font-size: 12px;">35 menit lalu</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn-setujui"><i class="fa-solid fa-check"></i> Setujui</button>
+                        <button class="btn-tolak"><i class="fa-solid fa-xmark"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-pastel-blue">SK</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Shinta Kristy</strong>
+                          <span class="user-sub">Blok C1 / No. 08</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue text-center pos-multi-line">Iuran Kebersihan<br>dan Keamanan</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 175.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-qrcode"></i> QRIS GateLand <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                    <td>
+                      <span class="text-secondary" style="font-size: 12px;">1 jam lalu</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn-setujui"><i class="fa-solid fa-check"></i> Setujui</button>
+                        <button class="btn-tolak"><i class="fa-solid fa-xmark"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4 -->
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-pastel-pink">RK</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Ratna Kartika</strong>
+                          <span class="user-sub">Blok B2 / No. 14</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue text-center pos-multi-line">Iuran Kebersihan<br>dan Keamanan</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 175.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-building-columns"></i> BSI Transfer <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                    <td>
+                      <span class="text-secondary" style="font-size: 12px;">2 jam lalu</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn-setujui"><i class="fa-solid fa-check"></i> Setujui</button>
+                        <button class="btn-tolak"><i class="fa-solid fa-xmark"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5 -->
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-pastel-blue">AP</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Azizah Pratama</strong>
+                          <span class="user-sub">Blok B4 / No. 12</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue text-center pos-multi-line">Iuran Kebersihan<br>dan Keamanan</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 175.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-building-columns"></i> BCA Transfer <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                    <td>
+                      <span class="text-secondary" style="font-size: 12px;">10 menit lalu</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn-setujui"><i class="fa-solid fa-check"></i> Setujui</button>
+                        <button class="btn-tolak"><i class="fa-solid fa-xmark"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6 -->
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-pastel-blue">A</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Anastasya</strong>
+                          <span class="user-sub">Blok A2 / No. 05</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue">Iuran Rutin</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 200.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-qrcode"></i> QRIS GateLand <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                    <td>
+                      <span class="text-secondary" style="font-size: 12px;">35 menit lalu</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn-setujui"><i class="fa-solid fa-check"></i> Setujui</button>
+                        <button class="btn-tolak"><i class="fa-solid fa-xmark"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7 -->
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="initial-avatar avatar-pastel-blue">EP</div>
+                        <div>
+                          <strong class="user-name-title">Ibu Eka Putri</strong>
+                          <span class="user-sub">Blok C1 / No. 08</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="tag-pos pos-blue text-center pos-multi-line">Iuran Kebersihan<br>dan Keamanan</span>
+                    </td>
+                    <td><strong class="amount-text">Rp 175.000</strong></td>
+                    <td>
+                      <button class="btn-bukti">
+                        <i class="fa-solid fa-qrcode"></i> QRIS GateLand <span class="btn-subtext">Klik pratinjau</span>
+                      </button>
+                    </td>
+                    <td>
+                      <span class="text-secondary" style="font-size: 12px;">1 jam lalu</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn-setujui"><i class="fa-solid fa-check"></i> Setujui</button>
+                        <button class="btn-tolak"><i class="fa-solid fa-xmark"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </main>
 
   </div>
-
+  
+  <script src="toggle.js"></script>
 </body>
 </html>

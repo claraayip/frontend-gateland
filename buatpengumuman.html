@@ -21,7 +21,7 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="brand-logo">
-          <i class="fa-solid fa-building-user logo-icon"></i>
+          <img src="assets/logo gateland.png" alt="GateLand Logo" style="height: 32px; width: auto;">
           <span class="brand-name">GateLand</span>
         </div>
       </div>
@@ -64,19 +64,23 @@
 
       <!-- User Profile Sidebar Bottom -->
       <div class="user-sidebar-card">
-        <div class="user-avatar-circle">
-          <i class="fa-solid fa-user"></i>
+        <div class="user-info-top">
+          <div class="user-avatar-circle">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Bpk. Bambang P.</span>
+            <span class="user-role">Ketua RT 04 / RW 08</span>
+          </div>
         </div>
-        <div class="user-info">
-          <span class="user-name">Bpk. Bambang P.</span>
-          <span class="user-role">Ketua RT 04 / RW 08</span>
+        <div class="user-info-bottom">
           <div class="user-status">
             <span class="status-dot"></span> Online
           </div>
+          <a href="index.html" class="btn-logout" title="Keluar">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+          </a>
         </div>
-        <a href="index.html" class="btn-logout" title="Keluar">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
-        </a>
       </div>
     </aside>
 
@@ -105,29 +109,32 @@
 
       <!-- SUB-HEADER / BREADCRUMB -->
       <div class="sub-header-bar">
-        <div class="sub-header-left">
+        <div class="sub-header-top">
           <div class="breadcrumb">
-            <a href="dashboard.html">Dashboard</a>
+            <a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a>
             <i class="fa-solid fa-chevron-right"></i>
             <span>Pengumuman & Warga</span>
             <i class="fa-solid fa-chevron-right"></i>
             <span class="active-crumb">Buat Pengumuman Baru</span>
           </div>
+          <div class="sub-header-right">
+            <span class="auto-save-text" style="display: flex; gap: 8px; align-items: flex-start;">
+              <i class="fa-solid fa-cloud-arrow-up" style="margin-top: 2px;"></i> 
+              <span style="display: flex; flex-direction: column;">Draf tersimpan otomatis: <strong>10:42 WIB</strong></span>
+            </span>
+            <button type="button" class="btn-secondary-outline">
+              <i class="fa-regular fa-floppy-disk"></i> Simpan Draf
+            </button>
+          </div>
+        </div>
+
+        <div class="sub-header-bottom">
           <div class="action-status-group">
             <a href="dashboard.html" class="btn-back-link">
               <i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard
             </a>
             <span class="mode-editor-badge">• Mode Editor Aktif</span>
           </div>
-        </div>
-
-        <div class="sub-header-right">
-          <span class="auto-save-text">
-            <i class="fa-regular fa-cloud-check"></i> Draf tersimpan otomatis: <strong>10:47 WIB</strong>
-          </span>
-          <button type="button" class="btn-secondary-outline">
-            <i class="fa-regular fa-floppy-disk"></i> Simpan Draf
-          </button>
         </div>
       </div>
 

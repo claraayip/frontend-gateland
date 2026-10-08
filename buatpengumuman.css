@@ -2,14 +2,22 @@
    STYLE KHUSUS HALAMAN BUAT PENGUMUMAN
    ========================================================= */
 
-/* SUB-HEADER / BREADCRUMB BAR */
 .sub-header-bar {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sub-header-top {
+  display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sub-header-bottom {
+  display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 .sub-header-left {
@@ -54,12 +62,12 @@
 .btn-back-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 6px 14px;
+  gap: 8px;
+  background-color: #f1f5f9;
+  color: var(--text-primary);
+  padding: 8px 16px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -111,7 +119,15 @@
 }
 
 .section-title i {
-  font-size: 18px;
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .section-title h2 {
@@ -158,19 +174,18 @@ label {
 
 .input-text, .textarea-input {
   width: 100%;
-  padding: 10px 14px;
-  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  border: none;
   border-radius: var(--radius-md);
   font-size: 13px;
   outline: none;
-  background-color: #f8fafc;
+  background-color: var(--bg-main);
   color: var(--text-primary);
-  transition: border-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .input-text:focus, .textarea-input:focus {
-  border-color: var(--primary-color);
-  background-color: #ffffff;
+  background-color: #e2e8f0;
 }
 
 .field-help {
@@ -190,13 +205,13 @@ label {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  background-color: #f1f5f9;
-  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: var(--bg-main);
+  border-radius: 24px;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-color);
   transition: all 0.2s;
 }
 
@@ -217,10 +232,10 @@ label {
 }
 
 .urgency-card {
-  border: 1px solid var(--border-color);
+  border: 1.5px solid transparent;
   border-radius: var(--radius-md);
-  padding: 12px;
-  background-color: #f8fafc;
+  padding: 16px;
+  background-color: var(--bg-main);
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -245,9 +260,9 @@ label {
 }
 
 .badge-biasa { background-color: #e2e8f0; color: #475569; }
-.badge-agenda { background-color: #e0e7ff; color: var(--primary-color); }
-.badge-penting { background-color: #fef3c7; color: #d97706; }
-.badge-darurat { background-color: var(--accent-pink-light); color: #dc2626; }
+.badge-agenda { background-color: var(--primary-color); color: white; }
+.badge-penting { background-color: #78350f; color: white; }
+.badge-darurat { background-color: #dc2626; color: white; }
 
 .urgency-title {
   font-size: 12px;
@@ -278,16 +293,16 @@ label {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 12px;
-  background-color: #f8fafc;
-  border: 1px solid var(--border-color);
+  padding: 16px;
+  background-color: var(--bg-main);
+  border: 1.5px solid transparent;
   border-radius: var(--radius-md);
   cursor: pointer;
 }
 
 .distribution-card.active {
   border-color: var(--primary-color);
-  background-color: #ffffff;
+  background-color: #e0e7ff;
 }
 
 .distribution-card input {
@@ -309,7 +324,10 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 16px 24px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -317,10 +335,10 @@ label {
 .btn-cancel {
   background-color: var(--accent-pink-light);
   color: #9b2c2c;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -334,16 +352,23 @@ label {
 
 .btn-secondary-outline {
   background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  padding: 10px 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  color: var(--primary-color);
+  padding: 10px 20px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-secondary-outline:hover {
+  background-color: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .btn-primary-publish {

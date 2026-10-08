@@ -21,7 +21,7 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="brand-logo">
-          <i class="fa-solid fa-building-user logo-icon"></i>
+          <img src="assets/logo gateland.png" alt="GateLand Logo" style="height: 32px; width: auto;">
           <span class="brand-name">GateLand</span>
         </div>
       </div>
@@ -64,19 +64,23 @@
 
       <!-- User Profile Sidebar Bottom -->
       <div class="user-sidebar-card">
-        <div class="user-avatar-circle">
-          <i class="fa-solid fa-user"></i>
+        <div class="user-info-top">
+          <div class="user-avatar-circle">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Bpk. Bambang P.</span>
+            <span class="user-role">Ketua RT 04 / RW 08</span>
+          </div>
         </div>
-        <div class="user-info">
-          <span class="user-name">Bpk. Bambang P.</span>
-          <span class="user-role">Ketua RT 04 / RW 08</span>
+        <div class="user-info-bottom">
           <div class="user-status">
             <span class="status-dot"></span> Online
           </div>
+          <a href="index.html" class="btn-logout" title="Keluar">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+          </a>
         </div>
-        <a href="index.html" class="btn-logout" title="Keluar">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
-        </a>
       </div>
     </aside>
 
@@ -154,7 +158,7 @@
         <div class="table-header-bar">
           <div class="table-title-info">
             <h3>Daftar Penghuni RT 04</h3>
-            <span class="sub-count">Menampilkan 6 dari 150 KK</span>
+            <span class="pill-badge-purple">Menampilkan 6 dari 150 KK</span>
           </div>
 
           <button class="btn-sort">
@@ -171,7 +175,7 @@
                 <th>UNIT / BLOK / ALAMAT</th>
                 <th>ANGGOTA KK</th>
                 <th>STATUS PEMBAYARAN</th>
-                <th>DETAIL</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -207,18 +211,14 @@
                     <i class="fa-regular fa-circle-check"></i> Lunas (Sep 2026)
                   </span>
                 </td>
-                <td>
-                  <button class="btn-detail-warga">
-                    <i class="fa-solid fa-id-card"></i> Detail Data Warga
-                  </button>
-                </td>
+                <td></td>
               </tr>
 
               <!-- ROW 2 -->
               <tr>
                 <td>
                   <div class="user-profile-cell">
-                    <div class="avatar-circle slate">HK</div>
+                    <div class="avatar-circle light-purple">HK</div>
                     <div class="user-meta">
                       <div class="name-status-row">
                         <strong class="warga-name">Ibu Alisha Nayara</strong>
@@ -242,14 +242,10 @@
                 </td>
                 <td>
                   <span class="status-payment-pill red">
-                    <i class="fa-regular fa-circle-xmark"></i> Belum Lunas (1 Bln)
+                    <i class="fa-regular fa-clock"></i> Belum Lunas (1 Bln)
                   </span>
                 </td>
-                <td>
-                  <button class="btn-detail-warga">
-                    <i class="fa-solid fa-id-card"></i> Detail Data Warga
-                  </button>
-                </td>
+                <td></td>
               </tr>
 
               <!-- ROW 3 -->
@@ -283,11 +279,7 @@
                     <i class="fa-regular fa-circle-check"></i> Lunas (Sep 2026)
                   </span>
                 </td>
-                <td>
-                  <button class="btn-detail-warga">
-                    <i class="fa-solid fa-id-card"></i> Detail Data Warga
-                  </button>
-                </td>
+                <td></td>
               </tr>
 
               <!-- ROW 4 -->
@@ -321,11 +313,7 @@
                     <i class="fa-regular fa-circle-check"></i> Lunas (Sep 2026)
                   </span>
                 </td>
-                <td>
-                  <button class="btn-detail-warga">
-                    <i class="fa-solid fa-id-card"></i> Detail Data Warga
-                  </button>
-                </td>
+                <td></td>
               </tr>
 
               <!-- ROW 5 (HIGHLIGHTED PENDING VERIFICATION) -->
@@ -355,14 +343,11 @@
                   </div>
                 </td>
                 <td>
-                  <span class="status-payment-pill orange">
-                    Menunggu Verifikasi
+                  <span class="status-payment-pill red">
+                    <i class="fa-regular fa-clipboard"></i> Menunggu Verifikasi
                   </span>
                 </td>
                 <td class="action-cell">
-                  <button class="btn-detail-warga">
-                    <i class="fa-solid fa-id-card"></i> Detail Data Warga
-                  </button>
                   <button class="btn-verify">Verifikasi Akun</button>
                 </td>
               </tr>
@@ -599,7 +584,7 @@
             </p>
           </div>
         </div>
-        <button type="button" id="closeModalDetailBtn" class="btn-close-modal">&times;</button>
+        <button type="button" id="closeModalDetailBtn" class="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
       <!-- MODAL BODY (SCROLLABLE) -->
@@ -618,15 +603,15 @@
               <i class="fa-solid fa-location-dot"></i> Blok A2 No. 05 • Jl. Gardenia Raya (RT 04 / RW 08)
             </p>
             <div class="detail-contacts">
-              <span><i class="fa-solid fa-phone"></i> 0812-9945-1122</span>
-              <span><i class="fa-regular fa-envelope"></i> hendra.kusuma@gmail.com</span>
+              <span><i class="fa-solid fa-message" style="color: #10b981;"></i> 0812-9845-1122</span>
+              <span><i class="fa-regular fa-envelope"></i> hendra.kusuma@email.com</span>
             </div>
           </div>
 
           <div class="detail-register-info">
             <span class="reg-label">Terdaftar Sejak</span>
             <strong class="reg-date">14 Januari 2021</strong>
-            <span class="reg-duration">Masa Huni: <strong>5+ Thn</strong></span>
+            <span class="pill-badge-purple" style="display: inline-block; margin-top: 6px; font-size: 10px;">Masa Huni: 5+ Thn</span>
           </div>
         </div>
 
@@ -666,11 +651,11 @@
             </div>
 
             <div class="emergency-contact-card margin-top-12">
-              <div class="emergency-icon"><i class="fa-solid fa-phone-volume"></i></div>
+              <div class="emergency-icon"><i class="fa-solid fa-address-card"></i></div>
               <div>
                 <span class="emergency-label">KONTAK DARURAT KELUARGA</span>
                 <strong class="emergency-name">Bpk. Hendra Kusuma (Suami)</strong>
-                <span class="emergency-phone">0812-9045-0009</span>
+                <span class="emergency-phone">0812-9845-9900</span>
               </div>
             </div>
           </div>
@@ -695,10 +680,10 @@
                     <strong>Toyota Innova Zenix</strong>
                     <span class="vehicle-type">Mobil 1</span>
                   </div>
-                  <span class="vehicle-plate">B 1428 GTL</span>
+                  <span class="vehicle-plate">B 1420 GTL</span>
                 </div>
                 <div class="vehicle-tag-status">
-                  <span class="rfid-tag">RFID - 0402</span>
+                  <span class="rfid-tag">#RFID-0482</span>
                   <span class="active-status-dot">• Aktif</span>
                 </div>
               </div>
@@ -714,7 +699,7 @@
                   <span class="vehicle-plate">B 4912 SFD</span>
                 </div>
                 <div class="vehicle-tag-status">
-                  <span class="rfid-tag">RFID - 0403</span>
+                  <span class="rfid-tag">#RFID-0483</span>
                   <span class="active-status-dot">• Aktif</span>
                 </div>
               </div>
@@ -722,7 +707,7 @@
             </div>
 
             <div class="barrier-info-box margin-top-12">
-              <i class="fa-solid fa-shield-cat barrier-icon"></i>
+              <i class="fa-solid fa-shield-halved barrier-icon"></i>
               <div>
                 <strong>Izin Portal Klaster Otomatis</strong>
                 <p>Akses Barrier Gate Otomatis & Tamu Whitelist diizinkan lewat pos satpam utama tanpa verifikasi manual.</p>
@@ -839,7 +824,7 @@
     }
 
     // 2. Kontrol Modal Detail Data Warga
-    const detailWargaBtns = document.querySelectorAll('.btn-detail-warga');
+    const detailWargaBtns = document.querySelectorAll('.btn-detail-warga, .warga-name');
     const closeModalDetailBtn = document.getElementById('closeModalDetailBtn');
     const closeDetailFooterBtn = document.getElementById('closeDetailFooterBtn');
     const modalDetailWarga = document.getElementById('modalDetailWarga');
